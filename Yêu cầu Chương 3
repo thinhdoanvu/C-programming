@@ -45,9 +45,9 @@ Câu 11. Đổi chỗ của số lớn nhất và nhỏ nhất trong mảng 2 ch
    4    5    6
    7    8    1
 Câu 12. In ra các số nguyên tố có trong mảng 2 chiều
-	*    2    3
-  *    5    *
-  7    *    *
+*    2    3
+*    5    *
+7    *    *
 Câu 13. Nếu mảng 2 chiều có tổng hàng = tổng cột = tổng chéo chính =tổng chéo phụ thì ma trận đó được gọi là ma phương.
 
 Câu 14. Sắp xếp thứ tự tăng dần của các phần tử theo thứ tự tăng dần của hàng, cột
