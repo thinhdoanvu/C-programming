@@ -1,0 +1,46 @@
+Câu 1. Nhập vào 1 chuỗi và in ra theo thứ tự ngưọc lại với chuỗi đầu vào
+	Dai hoc Nha Trang
+	gnarT ahN coh iaD
+Câu 2. Nhập vào chuỗi ký tự có nhiều khoảng trắng liên tiếp nhau. Có bao nhiêu từ trong chuỗi vừa nhập
+Dai hoc Nha Trang
+So tu cua chuoi la: 4
+Câu 3. Nhập vào chuỗi ký tự và đếm có bao nhiêu nguyên âm trong chuỗi
+	Truong Cua Em la Dai Hoc Nha Trang
+Tong so nguyen am co trong chuoi la: 11
+Trong do:
+Nguyen am a/A la: 5
+Nguyen am e/E la: 1
+Nguyen am i/I la: 1
+Nguyen am o/O la: 2
+Nguyen am u/U la: 2
+Câu 4. Nhập vào một chuỗi và xóa tất cả các nguyên âm trong chuỗi vừa nhập
+	Dai hoc Nha Trang
+	D hc Nh Trng
+Câu 5. Xóa tất cả các ký tự trắng thừa (2 ký tự trắng liên tiếp nhau) trong chuỗi
+        	            Dai           Hoc     Nha    Trang
+Chuoi sau khi xoa tat cac cac ky tu trang lien ke nhau :
+Dai Hoc Nha Trang
+Câu 6. Nhập vào chuỗi ký tự, kết thúc bằng phím Enter. In ra chuỗi viết hoa và viết thường các ký tự.
+	DaI hOC nhA trANg
+Chuoi sau khi in hoa la
+DAI HOC NHA TRANG
+Chuoi sau khi viet thuong la
+dai hoc nha trang
+Câu 7. Nhập vào 2 chuỗi ký tự và nối 2 chuỗi lại với nhau
+	Dai hoc + Nha Trang = Dai hoc Nha Trang
+Câu 8. Nhập vào 1 chuỗi ký tự, kết thúc là phím Enter. In ra chuỗi con được tạo ra từ chuỗi ban đầu với vị trí cắt và chiều dài ký tự cần cắt.
+	Dai hoc Nha Trang
+Vi tri cat chuoi la: 8
+Chieu dai can cat la: 9
+Chuoi con duoc sinh ra tu vi tri 8 voi do dai 9 ky tu cua chuoi ban dau la:
+Nha Trang
+Câu 9. (Kmer) Nhập vào chuỗi ký tự kết thúc bằng ký tự trắng. Tạo ra các chuỗi con từ chuỗi ban đầu với chiều dài nhập từ bàn phím.
+AGTCGTA 
+Chieu dai cua chuoi Kmer la: 3
+Chuoi Kmer duoc sinh ra tu chuoi ban dau voi do dai 3 la:
+AGT
+   GTC
+      TCG
+         CGT
+            GTA	
+
