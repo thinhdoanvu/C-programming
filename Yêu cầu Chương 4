@@ -43,4 +43,17 @@ AGT
       TCG
          CGT
             GTA	
-
+Câu 10. Nhập vào 1 chuỗi ký tự và khẳng định chuỗi vừa nhập có phải là chuỗi đối xứng hay không?
+	AGCTGAGTCGA
+	KQ: La chuoi doi xung
+Câu 11. Nhập vào 1 chuỗi DNA, đếm tần số xuất hiện của các bazơ A,T,G,C và tính phần trăm của (A,T) và (G,C).
+AGTTGACCCGT
+Bazo          Tan so
+A                2
+T                3
+G                3
+C                3
+Phan tram (GC) la: 54.545
+Câu 12. Nhập vào một chuỗi ký tự, tận cùng là ký tự trắng. In ra từ dài nhất
+Dai hoc nha Trang – NTU
+Tu dai nhat la: Trang, co 5 ky tu
