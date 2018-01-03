@@ -1,0 +1,60 @@
+Câu 1. Nhập vào số phần tử của mảng 2 chiều sao cho 0<số cột =số hàng<=4
+	Nhập vào các phần tử cho ma trận
+	In ra các phần tử vừa nhập
+    1    2    3
+    4    5    6
+    7    8    9
+Câu 2. In ra các phần tử là số chẵn, lẻ ở trong mảng vừa nhập
+4    6    *
+2    8    4
+*    *    2
+
+*    *    1
+*    *    *
+7    9    *
+Câu 3. In ra các phần tử nằm trên đường chéo chính (bao gồm cả đường chéo chính)
+    1    2    3
+         5    6
+              9
+Câu 4. In ra cac phần tử nằm bên dưới đường chéo chính
+    1
+    4    5
+    7    8    9
+Câu 5. In ra các phần tử bên trên đường chéo phụ
+ 1    2    3
+ 4    5
+ 7
+Câu 6. In ra các phần tử bên dưới đường chéo phụ
+           3
+       5   6
+ 7    8    9
+Câu 7. In ra tổng của các số thuộc đường chéo chính
+15
+Câu 8. In ra tổng các số thuộc đường chéo phụ
+15
+Câu 9. In ra tổng các hàng
+Tong cua hang thu 0 la: 6
+Tong cua hang thu 1 la: 15
+Tong cua hang thu 2 la: 24
+Câu 10. In ra tổng các cột
+Tong cua cot 0 la 12
+Tong cua cot 1 la 15
+Tong cua cot 2 la 18
+Câu 11. Đổi chỗ của số lớn nhất và nhỏ nhất trong mảng 2 chiều
+   	9    2    3
+    4    5    6
+    7    8    1
+Câu 12. In ra các số nguyên tố có trong mảng 2 chiều
+	*    2    3
+  *    5    *
+  7    *    *
+Câu 13. Nếu mảng 2 chiều có tổng hàng = tổng cột = tổng chéo chính =tổng chéo phụ thì ma trận đó được gọi là ma phương.
+
+Câu 14. Sắp xếp thứ tự tăng dần của các phần tử theo thứ tự tăng dần của hàng, cột
+    1    2    3
+    4    5    6
+   	7    8    9
+Câu 15. In ra ma trận chuyển vị 
+   	1    4    7
+  	2    5    8
+ 	  3    6    9
