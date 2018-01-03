@@ -1,0 +1,44 @@
+Câu1. Nhập vào dãy số nguyên có ít nhất 10 phần tử
+Câu 2. In ra dãy số vừa nhập
+Ví dụ: 1 6 3 0 7 9 8 4 2 5
+Câu 3. Sắp xếp dãy số theo thứ tự tăng dần
+KQ: 0 1 2 3 4 5 6 7 8 9
+Câu 4. In ra các số là bội số của 3 trong dãy số
+KQ: 3 6 9
+Câu 5. In ra các số là ước số của 12
+KQ: 1 2 3 4 6
+Câu 6. In ra các số lẻ có trong dãy số
+KQ: 1 3 5 7 9
+Câu 7. In ra các số chẵn có trong dãy số (trừ số 0)
+KQ: 2 4 6 8
+Câu 8. Tìm bội chung nhỏ nhất của các số ở Câu 7
+KQ: 24
+Câu 9. In ra số lớn nhất và bé nhất trong dãy số
+KQ: MAX=9 và MIN = 0
+Câu 10. In ra số lớn thứ 2 của dãy số
+KQ: 8
+Câu 11. Nhập vào số X từ bàn phím và kiểm tra X trong dãy số. Nếu:
+  11.1. X đã tồn tại trong dãy số thì hoán vị số X và MIN
+  Ví dụ: X = 4
+  KQ: 4 1 2 3 0 5 6 7 8 9
+  11.2. Nếu X chưa tồn tại trong dãy số thì chèn X vào dãy số sao cho dãy vẫn tăng dần.
+Ví dụ: X = 10
+KQ: 0 1 2 3 4 5 6 7 8 9 10
+Câu 12. Nhập X từ bàn phím và kiểm tra X trong dãy số. 
+  Nếu X không có trong dãy số thì in ra thông báo “Khong tim thay so X”.
+  Ví dụ: X = 20
+  KQ: “Khong tim thay so 20 trong day so”
+  Ngược lại thì xóa X ra khỏi dãy số.
+  Ví dụ: X=4
+  KQ: 1 2 3 0 5 6 7 8 9
+Câu 13. Nhập vào 1 số K và hỏi số K có phải là số đối xứng hay không?
+Ví dụ: K = 1112111
+KQ: K là số đối xứng
+Ví dụ: K = 111211
+KQ: K không phải là số đối xứng
+Câu 14. In ra tất cả các số nguyên tố có trong dãy số
+Ví dụ: Dãy số = 1 3 4 0 5 9 7 8 6 2
+KQ: 2 3 5 7 9
+Câu 15. Nhập vào dãy số có nhiều phần tử trùng nhau và tiến hành xóa các phân tử sao cho dãy số trở thành đôi 1 khác nhau.
+Ví dụ:  1 2 3 3 4 7 5 9 1 4 4 2 6 3 8
+KQ: 1 2 3 4 5 6 7 8 9
