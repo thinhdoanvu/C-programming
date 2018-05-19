@@ -45,3 +45,20 @@ Bui Van Ga      3       4.00    5.00    4.00    4.33
 Nguyen Lan A    3       7.00    6.00    8.00    7.00
 Ho Yen Nhi      3       7.50    9.00    6.50    7.67
 Dao Hong Cam    3       7.00    9.00    8.50    8.17
+
+###################################################################################
+@@@@@@@@@@@@@@@@@@         BAI TAP SO 2                           @@@@@@@@@@@@@@@@@
+###################################################################################
+Viết chương trình 
+1. Nhập thông tin cho nhan vien bao gồm:
+- Số lượng nhân viên (<=10)
+- Họ và tên nhân viên
+- Mã nhân viên
+- Số ngày công
+- Lương = só ngày công * 300
+2. In ra danh sách thông tin nhân viên đã nhập, bao gồm cả lương
+3. Sắp xếp danh sách tăng dần theo số ngày công
+4. Tìm kiếm theo mã của nhân viên
+5. Thêm mới 1 nhân viên vào cuối danh sách
+6. Xóa 1 nhân viên ra khỏi danh sách theo mã nhập vào
+7. Cập nhật thông tin cho nhân viên: họ và tên, số ngày công, mã nhân viên, lương nhân viên (với mã tìm kiếm)
