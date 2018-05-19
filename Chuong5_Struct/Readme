@@ -45,38 +45,3 @@ Bui Van Ga      3       4.00    5.00    4.00    4.33
 Nguyen Lan A    3       7.00    6.00    8.00    7.00
 Ho Yen Nhi      3       7.50    9.00    6.50    7.67
 Dao Hong Cam    3       7.00    9.00    8.50    8.17
-So sinh vien cho lop = 4
-Nhap ho va ten SV [1]:Ho Yen Nhi
-Lop:3
-Diem mon toan:7.5
-Diem mon ly:9.0
-Diem mon hoa:6.5
-Nhap ho va ten SV [2]:Nguyen Lan A
-Lop:3
-Diem mon toan:7
-Diem mon ly:6
-Diem mon hoa:8
-Nhap ho va ten SV [3]:Bui Van Ga
-Lop:3
-Diem mon toan:4
-Diem mon ly:5
-Diem mon hoa:4
-Nhap ho va ten SV [4]:Dao Hong Cam
-Lop:3
-Diem mon toan:7
-Diem mon ly:9
-Diem mon hoa:8.5
-DANH SACH SINH VIEN
-Ho va ten       Lop     Toan    Ly      Hoa     DTB
-Ho Yen Nhi      3       7.50    9.00    6.50    7.67
-Nguyen Lan A    3       7.00    6.00    8.00    7.00
-Bui Van Ga      3       4.00    5.00    4.00    4.33
-Dao Hong Cam    3       7.00    9.00    8.50    8.17
-
-Sap xep danh sach tang dan theo DTB:
-DANH SACH SINH VIEN
-Ho va ten       Lop     Toan    Ly      Hoa     DTB
-Bui Van Ga      3       4.00    5.00    4.00    4.33
-Nguyen Lan A    3       7.00    6.00    8.00    7.00
-Ho Yen Nhi      3       7.50    9.00    6.50    7.67
-Dao Hong Cam    3       7.00    9.00    8.50    8.17
