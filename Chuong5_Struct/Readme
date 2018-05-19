@@ -1,4 +1,7 @@
 Viết chương trình 
+############################################################################################
+@@@@@@@@@@@@@@@@@@                  BAI TAP SO 1                           @@@@@@@@@@@@@@@@@
+############################################################################################
 1. Nhập thông tin cho sinh viên bao gồm:
 - Số lượng sinh viên của 1 lớp (<=4)
 - Họ và tên Sinh viên
@@ -46,9 +49,9 @@ Nguyen Lan A    3       7.00    6.00    8.00    7.00
 Ho Yen Nhi      3       7.50    9.00    6.50    7.67
 Dao Hong Cam    3       7.00    9.00    8.50    8.17
 
-###################################################################################
-@@@@@@@@@@@@@@@@@@         BAI TAP SO 2                           @@@@@@@@@@@@@@@@@
-###################################################################################
+############################################################################################
+@@@@@@@@@@@@@@@@@@                  BAI TAP SO 2                           @@@@@@@@@@@@@@@@@
+############################################################################################
 Viết chương trình 
 1. Nhập thông tin cho nhan vien bao gồm:
 - Số lượng nhân viên (<=10)
@@ -62,3 +65,73 @@ Viết chương trình
 5. Thêm mới 1 nhân viên vào cuối danh sách
 6. Xóa 1 nhân viên ra khỏi danh sách theo mã nhập vào
 7. Cập nhật thông tin cho nhân viên: họ và tên, số ngày công, mã nhân viên, lương nhân viên (với mã tìm kiếm)
+================================================================================================
+DEMO
+================================================================================================
+So nhan vien toi da co the nhap = 03
+Nhap Ho va ten thu [1]: Ho Thu Sa
+MSNV:001
+So ngay cong: 21
+Nhap Ho va ten thu [2]: Nguyen Van Dien
+MSNV:002
+So ngay cong: 24
+Nhap Ho va ten thu [3]: Phan Kim Dung
+MSNV:004
+So ngay cong: 25
+
+DANH SACH NHAN VIEN
+Ho va ten       MaNV    N.cong  Luong
+Ho Thu Sa       001     21      630
+Nguyen Van Dien 002     24      720
+Phan Kim Dung   004     25      750
+
+Danh sach nhan vien sap xep tang dan theo ngay cong
+
+DANH SACH NHAN VIEN
+Ho va ten       MaNV    N.cong  Luong
+Ho Thu Sa       001     21      630
+Nguyen Van Dien 002     24      720
+Phan Kim Dung   004     25      750
+
+Nhap Ma Nhan Vien can tim kiem: 001
+
+Tim thay co 01 nhan vien co ma: 001
+
+Ho va ten       MaNV    N.cong  Luong
+Ho Thu Sa       001     21      630
+
+Ho va ten cua NV moi: Nguyen Hai Ha
+Ma so cua NV moi: 003
+So ngay cong cua NV moi: 26
+
+Danh sach nhan vien sau khi them 1 nguoi
+Ho va ten       MaNV    N.cong  Luong
+Ho Thu Sa       001     21      630
+Nguyen Van Dien 002     24      720
+Phan Kim Dung   004     25      750
+Nguyen Hai Ha   003     26      780
+
+Nhap ma cua nhan vien can duoc xoa: 001
+
+Danh sach nhan vien sau khi xoa la:
+
+DANH SACH NHAN VIEN
+Ho va ten       MaNV    N.cong  Luong
+Nguyen Van Dien 002     24      720
+Phan Kim Dung   004     25      750
+Nguyen Hai Ha   003     26      780
+
+Nhap Ma NV can thay doi thong tin: 002
+
+Nhap ho va ten moi cua nhan vien: Ho Huy Tuu
+
+Nhap ma so moi cua nhan vien: 007
+
+Nhap so ngay cong moi cua nhan vien: 33
+
+Danh sach nhan vien vua duoc cap nhat la:
+Ho va ten       MaNV    N.cong  Luong
+Ho Thu Sa       001     21      630
+Ho Huy Tuu      007     33      990
+Phan Kim Dung   004     25      750
+Nguyen Hai Ha   003     26      780
