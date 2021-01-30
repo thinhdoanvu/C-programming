@@ -1,0 +1,26 @@
+Câu 1. Nhập vào một năm dương lịch bất kỳ, hỏi năm đó có phải là năm nhuận hay không. Nếu thỏa mãn 1 trong 2 điều kiện sau:
+DK1. Chia hết cho 400
+DK2:Chia hết cho 4 nhưng không chia hết cho 100
+
+Câu 2. Viế chương trình nhập vào một số nguyên dương n và n là số lẻ thỏa điều kiện (n<15). Tính tổng
+S=1/SQRT(1) + 1/SQRT(1+3) + 1/SQRT(1+3+5) + ... + 1/SQRT(1+3+5+...+n)
+
+Câu 3. Viết các hàm thực hiện yêu cầu:
+1. Nhập vào n phần tử là các số nguyên (5<=n<=30)
+2. In ra các phần tử vừa nhập
+3. Tính tổng các phần tử có 2 chứ số trong mảng
+4. In ra phần tử chẵn lớn nhất trong mảng, nếu không có thì in ra thông báo không có số chắn
+
+Câu 4. Viết chương trình nhập vào 3 số thực a , b, c. Kiểm tra a,b,c có phải là số đo 3 cạnh của một tam giác hay không. Nếu có:
+Tính diện tích S của tam giác: S= SQRT(p*(p-a)*(p-b)*(p-c))
+Với p là nửa chu vi của tam giác.
+
+Câu 5. Nhập vào 1 số nguyên dương N và tính giá trị của biểu thức:
+S=SQRT(1) + SQRT(1+2) + SQRT(1+2+3) + ... + SQRT(1+2+3+...+N)
+
+Câu 6. Viết các hàm thực hiện các công việc sau:
+1. Nhập vào các phần tử là các số nguyên cho mảng 1 chiều (5<=N<=30)
+2. In ra các phần tử trong mảng
+3. Tìm số chính phương lớn nhất trong mảng. Nếu không có số chính phương thì in ra thông báo là không có
+4. Xóa phần tử nhỏ nhất trong mảng, nếu có nhiều số nhở nhất thì xóa 1 phần tử nhỏ nhất đầu tiên
+5. In ra mảng sau khi xóa.
