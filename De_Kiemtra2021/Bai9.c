@@ -53,11 +53,30 @@ void cuctri()
     printf("\nTong cac phan tu cuc tri la: %.3f",tong);
 }
 
+void thaythe()
+{
+	float x;
+	int i;
+	
+	printf("Nhap so x= ");
+	scanf("%f",&x);
+	
+	i=0;
+	while(mang[i]==0 && i<N)
+	{
+		mang[i]=x;
+		i++;
+	}
+	printf("\nmang sau klhi thay the la: ");
+	inmang();
+}
+
 int main()
 {
     nhapmang();
-    printf("Cac phan tu co trong mang vua nhap la: ");
+    printf("Cac phan tu co trong mang vua nhap la: \n");
     inmang();
     cuctri();
+    thaythe();
     return 0;
 }
