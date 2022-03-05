@@ -1,0 +1,32 @@
+Các kiểu file
+Trước khi bạn làm việc với file, bạn nên biết về 2 kiểu file khác nhau sau đây:
+File văn bản – text files: thường có đuôi là .txt (kém bảo mật và cần nhiều bộ nhớ để lưu trữ)
+File nhị phân – binary file: chỉ bao gồm các số 0 và 1 (bảo mật hơn)
+
+Các thao tác với file
+Trong ngôn ngữ lập trình C, có một số thao tác chính khi làm việc với file, bao gồm cả file văn bản và file nhị phân:
+Tạo mới một file
+Mở một file đã có
+Đóng file đang mở
+Đọc thông tin từ file/ Ghi thông tin ra file
+
+Thao tác với file trên ngôn ngữ C
+Khi làm việc với file, bạn cần khai báo 1 con trỏ kiểu FILE. Việc khai báo này là cần thiết để có sự kết nối giữa chương trình của bạn và tập tin mà bạn cần thao tác.
+FILE *fptr;
+Thao tác mở file: fptr = fopen("fileopen","mode")
+mode thường có dạng:
+r - Mở file chỉ cho phép đọc (trả về NULL nếu không tồn tại)
+rb - Mở file chỉ cho phép đọc dưới dạng nhị phân (trả về NULL nếu không tồn tại)
+w	- Mở file chỉ cho phép ghi (Nếu file đã tồn tại, nội dung sẽ bị ghi đè. Nếu file không tồn tại, nó sẽ được tạo tự động)
+wb	- Mở file nhị phân chỉ cho phép ghi (Nếu file đã tồn tại, nội dung sẽ bị ghi đè. Nếu file không tồn tại, nó sẽ được tạo tự động)
+a	- Mở file ở chế độ ghi “append”. Tức là sẽ ghi vào cuối của nội dung đã có (Nếu file không tồn tại, nó sẽ được tạo tự động)
+ab	- Mở file nhị phân ở chế độ ghi “append”. Tức là sẽ ghi vào cuối của nội dung đã có (Nếu file không tồn tại, nó sẽ được tạo tự động)
+r+ - Mở file cho phép cả đọc và ghi.	Nếu file không tồn tại, fopen() trả về NULL.
+rb+	- Mở file cho phép cả đọc và ghi ở dạng nhị phân.	Nếu file không tồn tại, fopen() trả về NULL.
+w+	- Mở file cho phép cả đọc và ghi.	Nếu file đã tồn tại, nội dung sẽ bị ghi đè. Nếu file không tồn tại, nó sẽ được tạo tự động.
+wb+	- Mở file cho phép cả đọc và ghi ở dạng nhị phân.	Nếu file đã tồn tại, nội dung sẽ bị ghi đè. Nếu file không tồn tại, nó sẽ được tạo tự động.
+a+ - Mở file cho phép đọc và ghi “append”.	Nếu file không tồn tại, nó sẽ được tạo tự động.
+ab+	- Mở file cho phép đọc và ghi “append” ở dạng nhị phân.	Nếu file không tồn tại, nó sẽ được tạo tự động.
+
+Thao tác đóng file
+fclose(fptr); //Con trỏ FILE trỏ tới file cần được đóng.
