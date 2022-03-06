@@ -1,0 +1,30 @@
+CON TRỎ LÀ GÌ
+Con trỏ cũng là biến, cũng có thể khai báo, khởi tạo và lưu trữ. Có giá trị và địa chỉ của riêng nó. Trong đó:
++ Giá trị của con trỏ: Địa chỉ mà con trỏ chỉ đến
++ Địa chỉ của con trỏ: Địa chỉ của bản thân biến con trỏ đó
++ Giá trị của biến nơi con trỏ trỏ đến
++ Địa chỉ của biến nơi con trỏ đang trỏ đến = Giá trị của con trỏ
+
+KHAI BÁO CON TRỎ
+<kiểu dữ liệu>*<tên biến>
++ float *P_so_pi
++ int *p_x,val (val KHÔNG phải là con trỏ)
++ char *p_kytu
++ void *p_voi (khong co kieu)
+
+GÁN GIÁ TRỊ CHO CON TRỎ
+Sau khi khai báo mà KHÔNG gán giá trị cho con trỏ (địa chỉ nơi con trỏ chỉ đến) thì mặc định sẽ chọn một giá trị bất kỳ (có thể sẽ trùng với địa chỉ của một biến nào đó ### NGUY HIỂM)
+Cách 1.
+int *p;
+int val;
+val = 7;
+p = &val; //giá trị của con trỏ là trỏ đến địa chỉ được lưu giữ bởi biến val;
+
+Cách 2.
+int val=5;
+int *p= &val
+
+Cách 3. Khai báo con trỏ NULL
+void *p;
+p=NULL; //NULL khi in ra có giá trị là 0
+
