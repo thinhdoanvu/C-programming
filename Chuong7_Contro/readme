@@ -2,8 +2,6 @@ CON TRỎ LÀ GÌ
 Con trỏ cũng là biến, cũng có thể khai báo, khởi tạo và lưu trữ. Có giá trị và địa chỉ của riêng nó. Trong đó:
 + Giá trị của con trỏ: Địa chỉ mà con trỏ chỉ đến
 + Địa chỉ của con trỏ: Địa chỉ của bản thân biến con trỏ đó
-+ Giá trị của biến nơi con trỏ trỏ đến
-+ Địa chỉ của biến nơi con trỏ đang trỏ đến = Giá trị của con trỏ
 
 KHAI BÁO CON TRỎ
 <kiểu dữ liệu>*<tên biến>
