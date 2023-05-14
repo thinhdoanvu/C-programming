@@ -1,67 +1,61 @@
 #include<stdio.h>
 #include<string.h>
 
-//khai bao bien
-char S[255];
+char S[255]="AGTCGTA ";
 
-//chuong trinh con
-void nhapchuoi()
-{
-  //khai bao bien
-  printf("Nhap vao chuoi ky tu: \n");
-  gets(S);
-}  
-
-void Kmer()
-{
-	 //khai bao bien
-	 char s[255];
-	 int batdau;
-	 int chieudai;
-	 int dem;
-	 int i;
-	 
-	 printf("\nChieu dai cua chuoi Kmer la: \n");
-	 scanf("%d",&chieudai);
-	 
-	 printf("\nChuoi Kmer duoc sinh ra tu chuoi ban dau voi do dai %d la:\n",chieudai);
-	 dem=0;
-	 
-	 for(batdau=0;batdau<=strlen(S)-chieudai;)
-	 {
-	   while(dem<chieudai)
-	   {
-	 	   s[dem]=S[batdau+dem];
- 	    dem++;
-	  	}
-		  //gan ky tu cuoi la ky tu ket thuc
-		  s[dem]='\0';
-		  
-		  //in ra so ky tu trang bu dap cho so ky tu bi loai bo
-		  for(i=0;i<batdau;i++)
-		  {
-      printf(" ");
-				}
-
-				//in ra chuoi ky tu
-		  printf("%s",s);
-
-		  //xuong hang
-		  printf("\n");
-		  
-		  //xoa bo dem ve lai ban dau
-		  batdau=batdau+1;
-		  dem=0; 
-		}
-	 
-	 
+void nhapchuoi(){
+	printf("Nhap vao chuoi ky tu: ");
+//	fflush(stdin);//xoa bo dem trong ban phim
+//	gets(S);
 }
 
-//chuong trinh chinh
-int main()
-{
-  nhapchuoi();
-  Kmer();
-  //ket thuc chuong trinh
-  getch();
+void inchuoi(){
+	puts(S);
+//	for(int i=0; i<strlen(S);i++){
+//		printf("%c",S[i]);
+//	}
+//	int i=0;
+//	while(S[i]!='\0'){
+//		printf("%c",S[i]);
+//		i++;
+//	}
+//	printf("\n");
+}
+
+void MID(char *source, int start, int stop){
+	char dest[255];
+	int dem=0;
+	for(int i=start; i<start+stop; i++){
+		dest[dem++]=source[i];
+	}
+	//gan ky tu ket thuc chuoi
+	dest[dem]='\0';//ky tu ket thuc chuoi
+	//in ra ket qua
+	puts(dest);
+}
+
+void Kmer(char *source, int k){
+	for(int i=0; i<strlen(S)-3; i++){
+		char dest[255];
+		int dem=0;
+		//voi moi vi tri i: sao chep va in ra k ky tu
+		for(int j=i; j<k+i; j++){
+			dest[dem++]=S[j];
+		}
+		//in so ky tu trang
+		for(int j=0; j<i; j++){
+			printf(" ");
+		}
+		//in ra chuoi ky tu sau khi sao chep
+		dest[dem]='\0';
+		puts(dest);
+	}
+}
+
+int main(){
+	//nhapchuoi();
+	printf("Chuoi vua nhap: ");
+	inchuoi();
+	//MID(S,4,3);
+	Kmer(S,3);
 }
