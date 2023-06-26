@@ -1,1 +1,4 @@
-Các bài tập được đánh số từ 1 đến 20
+Tìm số bé nhất có K chữ số 0 tận cùng
+A=15,B=12,K=2
+Hãy tìm C để có Tich=A*B có 2 số 0 tận cùng là bé nhất.
+C=2, Tich = 900
