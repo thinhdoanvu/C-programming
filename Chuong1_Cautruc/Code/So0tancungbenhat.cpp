@@ -1,12 +1,13 @@
 //So 0 tan cung be nhat
 //A=15, B=12, K=2
 #include<stdio.h>
+#include<limits.h>
 int main(){
 	int A,B,C,K;
 	printf("Nhap A = ");scanf("%d",&A);
 	printf("Nhap B = ");scanf("%d",&B);
 	printf("Nhap K = ");scanf("%d",&K);
-	for(int i=1;i<9; i++){
+	for(int i=1;i<INT_MAX; i++){
 		printf("\ni=%d",i);
 		int tong=A*B*i;
 		printf("\ntong=%d",tong);
