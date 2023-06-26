@@ -14,9 +14,9 @@ int main(){
 		int dem=0; 	//tong chu so 0 tan cung
 		int num=tong;
 		while (num%10 == 0) {
-	        dem++;
-	        num/=10;
-	    }
+	    dem++;
+	    num/=10;
+	  }
 		printf("\nso luong so 0 tan cung = %d",dem);
 		if(dem==K){
 			printf("\nC = %d",i);
@@ -26,8 +26,5 @@ int main(){
 			tong=tong*i;
 		}
 	}
-		
-		
-	
 	return 0;
 }
