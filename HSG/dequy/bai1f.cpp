@@ -6,7 +6,9 @@ float tong(int n){
         return 1.0;
     }
     else{
-        return 1.0/(n*(n+1)/2.0) + tong(n-1);
+        //return 1.0/(n*(n+1)/2.0) + tong(n-1);
+        int ms=n+s(n-1);
+		return 1.0/(ms) + s(n-1);
     }
 }
 //chuong trinh chinh
