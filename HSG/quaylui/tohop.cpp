@@ -18,28 +18,27 @@ void inmang(int m[], int size)
     cout<<endl;
 }
 
-void thu(int i){
-    int dem=0;
-    res[dem++]=a[i];
-
-    for(int j=i+1; j<=n; j++){
-        if(dem<k){
-            res[dem++]=a[j];
-        }
-        else{
-            inmang(res,dem);
-            dem=0;
-            res[dem++]=a[i];
-            res[dem++]=a[j];
-        }
+void thu(int i, int start){
+    cout<<"i: "<<i<<endl;
+    if(i == k) {
+        inmang(res, k);
+        return;
     }
-    if(i<n){
-        thu(i+1);
+
+    for(int j = start; j < n; j++) {
+        cout<<"j: "<<j<<endl;
+        if(p[j] == 0) {
+            res[i] = a[j];
+            p[j] = 1;
+            thu(i + 1, j + 1);
+            p[j] = 0;
+        }
     }
 }
 
 //chuong trinh chinh
 int main(){
-    thu(0);
+    sort(a, a+n);//sap xep day so de dam bao cac so lay theo thu tu
+    thu(0,0);
     return 0;
 } 

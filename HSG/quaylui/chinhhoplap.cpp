@@ -15,14 +15,14 @@ void inmang(int m[], int size){
 }
 
 void thu(int i){
+    if(i==k){
+        inmang(res,k);
+        return;
+    }
+
     for(int j=0; j<n; j++){
         res[i]=a[j];
-        if(i==k){
-            inmang(res,k);
-        }
-        else{
-            thu(i+1);
-        }
+        thu(i+1);
     }
 }
 
