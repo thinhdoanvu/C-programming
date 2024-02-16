@@ -24,6 +24,7 @@ void thu(int i){
     }
 
     for (int j = 0; j < n; j++) {
+        inmang(p,n);
         if (p[j] == 0){
             res[i] = a[j];
             p[j] = 1;

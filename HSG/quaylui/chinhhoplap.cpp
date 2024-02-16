@@ -15,14 +15,16 @@ void inmang(int m[], int size){
 }
 
 void thu(int i){
+    //cout<<"i: "<<i<<endl;
     if(i==k){
         inmang(res,k);
         return;
     }
 
     for(int j=0; j<n; j++){
+        cout<<"i:"<<i<<", j: "<<j<<endl;
         res[i]=a[j];
-        thu(i+1);
+        thu(i+1); 
     }
 }
 

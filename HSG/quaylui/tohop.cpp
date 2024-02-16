@@ -19,14 +19,14 @@ void inmang(int m[], int size)
 }
 
 void thu(int i, int start){
-    cout<<"i: "<<i<<endl;
+    // cout<<"i: "<<i<<endl;
     if(i == k) {
         inmang(res, k);
         return;
     }
 
     for(int j = start; j < n; j++) {
-        cout<<"j: "<<j<<endl;
+        // cout<<"j: "<<j<<endl;
         if(p[j] == 0) {
             res[i] = a[j];
             p[j] = 1;
