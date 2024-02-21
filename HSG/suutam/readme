@@ -1,1 +1,29 @@
+Bài 1: Số hoàn thiện
+Một số có tổng các ước nhỏ hơn nó bằng chính nó được gọi là số hoàn thiện.
+VD: 6 có ước nhỏ hơn nó là 1,2,3. Tổng là 1+2+3=6.
+Yêu cầu 1: Viết chương trình xét xem một số n được nhập từ bàn phím có phải là số hoàn thiện không.
+Yêu cầu 2: In ra các số hoàn thiện từ 1 - 1000
+
+Bài 2: Nén chuỗi và giải nén
+VD1: Nhập chuỗi S= ‘AABBBDFFFFGH’ (Từ 3 kí tự trở lên mới nén)
+     Nén: AA3BD4FGH
+
+VD2: Nhập chuỗi S=’ AA3BD4FGH’
+     Giải nén: AABBBDFFFFGH
+
+Bài 3: Chuỗi chia hết
+Nhập vào một chuỗi S bao gồm cả kí tự số và chữ. Đếm xem trong chuỗi S có bao nhiêu số chia hết cho 5 và in các số đó ra.
+VD: Nhập S= ‘asg35gds67gdgf345hh’
+    Có 2 số chia hết cho 5 là: 35, 345
+
+Bài 4: Số nguyên tố đối xứng
+Một số nguyên n được gọi là số nguyên tố đối xứng khi thỏa mãn hai tính chất sau:
+  - Số n là số nguyên tố
+  - Số n là số đối xứng (số đối xứng là số khi ta đọc từ trái qua phải và từ phải qua trái là như nhau, ví dụ các số 727, 11411, 131 là các số đối xứng.)
+Yêu cầu : Viết chương trình nhập vào 2 số nguyên dương a, b (0<a<b<65000)
+  a) Liệt kê ra màn hình (nếu có) các số nguyên tố đối xứng n (với a<=n<=b), các số cách nhau một khoảng trắng.
+  b) Thông báo có bao nhiêu số nguyên tố đối xứng đã liệt kê ở câu a.
+VD : Nhâp a=100, b=150
+  - Kết quả câu a : 101 131
+  - Kết quả câu b : Co 2 so nguyen to doi xung
 
