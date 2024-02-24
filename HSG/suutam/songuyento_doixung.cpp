@@ -46,8 +46,28 @@ void doixung(int a, int b){
     }
 }
 
+//cach thu 2 chi danh rieng cho du lieu kieu so
+int s;
+int tachso(int x){
+    if(x==0){
+        return s;
+    }
+    int du=x%10;
+    s=s*10+du;
+    return tachso(x/10);
+}
+
+void doixung2(int a, int b){
+    for(int i=a; i<=b; i++){
+        if(checknt(i)==1 && tachso(i)==i){//i la so nguyen to va doi xung
+            cout<<i<<" ";
+        }
+    }
+}
+
 //chuong trinh chinh
 int main(){
     doixung(100,150);
+    doixung2(100,150);
     return 0;
 }
