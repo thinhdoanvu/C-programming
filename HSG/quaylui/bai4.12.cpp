@@ -30,8 +30,8 @@ void sinhdau(int i){
         return;//phai co nha
     }
     for(int j=0; j<3; j++){//so luong cac ky tu trong mang a
-        if (i == 0 && j != 0) {
-            continue;  // Chỉ chấp nhận dấu - hoặc không có dấu ở vị trí đầu tiên
+        if (i == 0 && j == 1) {
+            break;  // Chỉ chấp nhận dấu - hoặc không có dấu ở vị trí đầu tiên
         }
         res[i]=a[j];
         sinhdau(i+1);
