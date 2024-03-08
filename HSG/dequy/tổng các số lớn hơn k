@@ -1,0 +1,31 @@
+//Cho trước mảng các số nguyên và một số k. Hãy tính tổng của các số nguyên lớn hơn k
+
+#include <iostream>
+using namespace std;
+
+int a[]={1,4,3,6,8,9,7};
+//tong: 6+7+8+9=30
+int n;
+int k=5;
+
+int tongdq(int a[],int n, int k){
+    int s=0;
+    if(n==0){
+        if(a[n]>k){
+            s=a[n];
+        }
+        return s;
+    }
+    //tim cac nghiem de quy
+    if(a[n]>k){
+        s=a[n];
+    }
+    return s+tongdq(a,n-1,k);
+}
+
+int main()
+{
+    n=sizeof(a)/sizeof(a[0]);
+    cout<<"tong la: "<<tongdq(a,n,k);
+    return 0;
+}
