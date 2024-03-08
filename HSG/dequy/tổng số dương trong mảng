@@ -1,0 +1,49 @@
+Viết chương trình bằng giải thuật đệ quy để tính tổng các số dương trong mảng
+Ví dụ: float a[]={1.2, 3.2, -3.5, -5.3, 4.6, 2.0}; 
+kết quả tổng = 11.0
+
+#include <iostream>
+using namespace std;
+
+float a[]={1.2, 3.2, -3.5, -5.3, 4.6, 2.0}; 
+//tong = 11.0
+int n;
+
+float tongdq(float a[], int n){
+    float s=0;
+    if(n==0){
+        if(a[n] >0){
+            s= a[n];
+        }
+        return s;
+    }
+    //tim nghiem de quy
+    if(a[n]>0){
+        s=a[n];
+    }
+    return s+tongdq(a,n-1);
+}
+
+///////Hoặc có thể viết như sau cho gọn//////
+float tongdq2(float a[], int n){
+  float s=0;
+    if(n==0){
+        if(a[n] >0){
+            return a[n];
+        }
+    }
+    //tim nghiem de quy
+    if(a[n]>0){
+        s=a[n];
+    }
+    return s+tongdq(a,n-1);
+}
+///////////////MAIN/////////////////////////
+
+int main()
+{
+    n=sizeof(a)/sizeof(a[0]);
+    cout<<"tong = "<<tongdq(a,n);
+
+    return 0;
+}
