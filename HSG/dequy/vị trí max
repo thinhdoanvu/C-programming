@@ -1,0 +1,28 @@
+//Cho mảng các số nguyên, hãy in ra màn hình vị trí của số lớn nhất trong mảng
+
+#include <iostream>
+using namespace std;
+
+int a[]={1,4,3,6,8,9,2,7};
+//ket qua: 5
+
+int n;
+
+int maxdq(int a[], int n){
+    int pos;
+    if(n==0){
+        pos=n;
+        return pos;
+    }
+    //tim cac nghien thanh phan de quy
+    pos = maxdq(a, n-1);
+    
+    return (a[n]>a[pos]?n:pos);
+}
+
+int main()
+{
+    n=sizeof(a)/sizeof(a[0]);
+    cout<<"vi tri max: "<<maxdq(a,n);
+    return 0;
+}
