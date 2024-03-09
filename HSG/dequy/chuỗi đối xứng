@@ -1,0 +1,43 @@
+//kiểm tra 1 chuỗi có phải là chuỗi đối xứng
+//s="abcba" -> yes
+//s="cabba" -> no
+
+#include <iostream>
+using namespace std;
+
+int doixung(string s, int start, int len){
+    cout<<"start, len: "<<start<<", "<< len<<endl;
+    if(start>=len){
+        return 1;
+    }
+    if(s[start]==s[len]){
+        return doixung(s,start+1,len-1);
+    }
+    else{
+        return 0;
+    }
+}
+
+
+int main()
+{
+    string s1 = "abba";//yes
+    string s2 = "abcba";//yes
+    string s3 = "abcdba";//no
+    string s4 = "aabbccddeeffgghhiijjiihheeffddeeddccbbaa";//no
+    string s5 = "abcdedcba123321abcdedcba";//yes
+    
+    int len1 = s1.length();
+    int len2 = s2.length();
+    int len3 = s3.length();
+    int len4 = s4.length();
+    int len5 = s5.length();
+    
+    cout<<"check doi xung: "<<doixung(s1,0,len1 - 1)<<endl;
+    cout<<"check doi xung: "<<doixung(s2,0,len2 - 1)<<endl;
+    cout<<"check doi xung: "<<doixung(s3,0,len3 - 1)<<endl;
+    cout<<"check doi xung: "<<doixung(s4,0,len4 - 1)<<endl;
+    cout<<"check doi xung: "<<doixung(s5,0,len5 - 1)<<endl;
+    
+    return 0;
+}
