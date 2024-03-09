@@ -1,0 +1,18 @@
+//tim ước chung lớn nhất của 2 số a,b
+
+#include <iostream>
+using namespace std;
+
+int ucln(int a, int b){
+    if(a==b){
+        return a;
+    }
+    //tim nghiem thanh phan de quy
+    return ucln((a>b)?(a-b):a,(a<b)?(b-a):b);
+}
+
+int main()
+{
+    cout<<"ucln: "<<ucln(5,27);
+    return 0;
+}
