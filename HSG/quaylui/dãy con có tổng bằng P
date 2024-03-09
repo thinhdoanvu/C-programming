@@ -1,0 +1,101 @@
+//in ra man hinh day con co tong bang P cho truoc
+//int a[]={5 2 7 5 10 2 12 4 6 2 3 9};
+//P=12: 7 5, 10 2, 12, 4 6 2, 3 9
+
+#include<bits/stdc++.h>
+#define MAX 100
+using namespace std;
+
+int a[]={5,2,7,5,10,2,12,4,6,2,3,9};
+int P = 12;
+int N;
+int sum=0;
+
+//danh cho quay lui
+int CLOSE[MAX];//mang danh dau so nao da dung
+int x[MAX];//mang luu tru ket qua cac so hang
+int flash=0;
+
+void init(int m[], int size, int value){
+    for(int i=0; i<size; i++){
+        m[i]=value;
+    }
+}
+
+void inmang(int m[], int size){
+    for(int i=0; i<size; i++){
+        cout<<m[i]<<" ";
+    }
+    cout<<endl;
+}
+
+void inketqua(){
+    cout<<"Tong cua cac phan tu lien tiep: ";
+    for(int i=0; i<N; i++){
+        if(x[i]!=-1){
+            cout<<a[x[i]]<<" ";
+        }
+    }
+    cout<<endl;
+}
+
+void thu(int idx){
+    if(sum==P){
+        inketqua();
+    }
+
+    for(int i=0; i<N; i++){//thu lan luot cac phan tu cua mang a
+        if(CLOSE[i]==0){
+            if(sum<=P){
+                sum+=a[idx];
+                x[idx]=i;
+                //inmang(x,N);
+                CLOSE[i]=1;
+                thu(idx+1);
+            }
+            else{
+                break;
+            }
+        }
+    }
+}
+
+
+//khai bao bien
+int main(){
+    N=sizeof(a)/sizeof(a[0]);
+    for(int i=0; i<N; i++){
+        sum=0;
+        init(x,N,-1);//day ket qua chua co toan hang nao
+        init(CLOSE,N,0);//day ket qua chua co toan hang nao
+        //init lai CLOSE: loai bo cac phan tu tu 0-> thoi diem dang xet (i)
+        for(int j=0; j<i; j++){
+            CLOSE[j]=1;
+            /* qua moi lan thu, danh dau lai phan tu da dung (do day con lien tiep)
+            0 0 0 0 0 0 0 0 0 0 0 0 
+            1 0 0 0 0 0 0 0 0 0 0 0 
+            1 1 0 0 0 0 0 0 0 0 0 0 
+            1 1 1 0 0 0 0 0 0 0 0 0 
+            1 1 1 1 0 0 0 0 0 0 0 0 
+            1 1 1 1 1 0 0 0 0 0 0 0 
+            1 1 1 1 1 1 0 0 0 0 0 0 
+            1 1 1 1 1 1 1 0 0 0 0 0 
+            1 1 1 1 1 1 1 1 0 0 0 0 
+            1 1 1 1 1 1 1 1 1 0 0 0 
+            1 1 1 1 1 1 1 1 1 1 0 0 
+            1 1 1 1 1 1 1 1 1 1 1 0 
+            thanh ra khong co khoang cach giua 2 phan tu ke nhau */
+        }
+        //inmang(x,N);
+        //inmang(CLOSE,N);
+        thu(i);
+    }
+    return 0;
+}
+
+//Ket qua:
+//Tong cua cac phan tu lien tiep: 7 5 
+//Tong cua cac phan tu lien tiep: 10 2 
+//Tong cua cac phan tu lien tiep: 12 
+//Tong cua cac phan tu lien tiep: 4 6 2 
+//Tong cua cac phan tu lien tiep: 3 9
