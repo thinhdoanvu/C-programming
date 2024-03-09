@@ -1,0 +1,132 @@
+//in ra man hinh day con co tong bang P cho truoc
+//int a[]={5 2 7 5 10 2 12 4 6 2 3 9};
+//P=12: 7 5, 10 2, 12, 4 6 2, 3 9
+#include<bits/stdc++.h>
+#define MAX 100
+using namespace std;
+
+int a[]={5,2,7,5,10,2,12,4,6,2,3,9};
+int P = 12;
+int N;
+int sum=0;
+
+//danh cho quay lui
+int CLOSE[MAX];//mang danh dau so nao da dung
+int x[MAX];//mang luu tru ket qua cac so hang
+
+//danh cho nhanh can
+int chieudai;
+int bestchieudai;
+int bestsolution[MAX];
+
+
+void init(int m[], int size, int value){
+    for(int i=0; i<size; i++){
+        m[i]=value;
+    }
+}
+
+void inmang(int m[], int size){
+    for(int i=0; i<size; i++){
+        cout<<m[i]<<" ";
+    }
+    cout<<endl;
+}
+
+void inketqua(){
+    cout<<"Tong cua cac phan tu lien tiep: ";
+    for(int i=0; i<N; i++){
+        if(x[i]!=-1){
+            cout<<a[x[i]]<<" ";
+        }
+    }
+    cout<<endl;
+}
+
+void update(){
+    if(bestchieudai < chieudai){
+        bestchieudai = chieudai;
+        //copy cac phan tu cua x sang bestsolution
+        for(int i=0; i<N; i++){
+            bestsolution[i]=x[i];
+        }
+    }
+    cout<<"chieu dai: "<<chieudai<<", best chieu dai: "<<bestchieudai<<endl;
+}
+
+void thu(int idx){
+    if(sum==P){
+        inketqua();
+        update();//danh cho nhanh can
+        //dieu kien xen tia
+         if(bestchieudai > chieudai){//chieu dai cua mang tim duoc < chieu dai tot nhat
+             return;
+         }
+        return;
+    }
+    
+    
+    for(int i=0; i<N; i++){//thu lan luot cac phan tu cua mang a
+        if(CLOSE[i]==0){
+            if(sum<=P){
+                //cap nhat chieu dai: danh cho nhanh can
+                chieudai++;
+                sum+=a[idx];
+                x[idx]=i;
+                //inmang(x,N);
+                CLOSE[i]=1;
+                thu(idx+1);
+            }
+            else{
+                break;
+            }
+        }
+    }
+}
+
+
+//khai bao bien
+int main(){
+    N=sizeof(a)/sizeof(a[0]);
+    //nhanh can
+    bestchieudai=0;//truong hop xau nhat la khong tim duoc tong
+    for(int i=0; i<N; i++){
+        sum=0;//reset lai tong
+        chieudai=0;//reset lai chieu dai
+        init(x,N,-1);//day ket qua chua co toan hang nao
+        init(CLOSE,N,0);//day ket qua chua co toan hang nao
+        //init lai CLOSE: loai bo cac phan tu tu 0-> thoi diem dang xet (i)
+        for(int j=0; j<i; j++){
+            CLOSE[j]=1;
+            /* qua moi lan thu, danh dau lai phan tu da dung (do day con lien tiep)
+            0 0 0 0 0 0 0 0 0 0 0 0 
+            1 0 0 0 0 0 0 0 0 0 0 0 
+            1 1 0 0 0 0 0 0 0 0 0 0 
+            1 1 1 0 0 0 0 0 0 0 0 0 
+            1 1 1 1 0 0 0 0 0 0 0 0 
+            1 1 1 1 1 0 0 0 0 0 0 0 
+            1 1 1 1 1 1 0 0 0 0 0 0 
+            1 1 1 1 1 1 1 0 0 0 0 0 
+            1 1 1 1 1 1 1 1 0 0 0 0 
+            1 1 1 1 1 1 1 1 1 0 0 0 
+            1 1 1 1 1 1 1 1 1 1 0 0 
+            1 1 1 1 1 1 1 1 1 1 1 0 
+            thanh ra khong co khoang cach giua 2 phan tu ke nhau */
+        }
+        //inmang(x,N);
+        //inmang(CLOSE,N);
+        thu(i);
+    }
+    //in ra ket qua cuoi cung
+    cout<<"chuoi con dai nhat co do dai: "<<bestchieudai<<" - ";
+    for(int i=0; i<N; i++){
+        if(bestsolution[i]!=-1){
+            cout<<a[bestsolution[i]]<<" ";
+        }
+    }
+    return 0;
+}
+
+//Kết quả trên: 3 (4,6,2)
+//int a[]={5,2,7,5,10,2,12,4,6,2,3,9,0,1,1,1};
+//Kết quả = 5 (9,0,1,1,1)
