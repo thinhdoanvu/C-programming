@@ -42,6 +42,7 @@ void inketqua(){
 void thu(int idx){
     if(sum==P){
         inketqua();
+        return;//phai co
     }
 
     for(int i=0; i<N; i++){//thu lan luot cac phan tu cua mang a
