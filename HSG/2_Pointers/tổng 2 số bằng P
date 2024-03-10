@@ -1,0 +1,81 @@
+//Cho trước một mảng đã sắp xếp (tăng dần). Hãy tìm 2 phần tử có tổng bằng P cho trước
+//Ví dụ: P=12, a[]={1 4 5 7 11 15}. Ket qua: 5+7=12
+
+#include<bits/stdc++.h>
+using namespace std;
+int N;
+int P=12;
+int a[]={2,4,5,7,11,15};
+int dem;
+void tuantu(){
+    dem=0;
+    int sum=0;
+    for(int i=0; i<N; i++){
+        for(int j=0; j<N; j++){
+            sum=a[i]+a[j];
+            dem++;
+            if(sum==P){
+                cout<<a[i]<<"+"<<a[j]<<"="<<P<<endl;
+                break;
+            }
+        }
+    }
+}
+
+void two_pointers(int l, int r){
+    dem=0;
+    while(l<r){
+        dem++;
+        int sum=a[l] + a[r];
+        if(sum==P){
+            cout<<a[l]<<"+"<<a[r]<<"="<<P<<endl;
+            cout<<"2 ponters ket thuc sau: "<<dem<<endl;
+            return;
+        }
+        if(sum<P){
+            l++;
+        }
+        if(sum>P){
+            r--;
+        }
+    }
+}
+
+void two_pointers_dequy(int l, int r){
+    dem++;
+    int sum=a[l]+a[r];
+    if(sum==P){
+        cout<<a[l]<<"+"<<a[r]<<"="<<P<<endl;
+        cout<<"2 ponters de quy ket thuc sau: "<<dem<<endl;
+        return;
+    }
+    //tim nghiem thanh phan
+    if(sum<P){
+        two_pointers_dequy(l+1,r);
+    }
+    if(sum>P){
+        two_pointers_dequy(l,r-1);
+    }
+}
+
+int main(){
+    N=sizeof(a)/sizeof(a[0]);
+
+    tuantu();
+    cout<<"sequential algo finished after: "<<dem<<endl;
+
+    two_pointers(0,N-1);
+
+    dem=0;
+    two_pointers_dequy(0,N-1);
+    return 0;
+}
+
+//7+5=12
+//sequential algo finished after: 31
+
+//5+7=12
+//2 ponters ket thuc sau: 5
+
+//5+7=12
+//2 ponters de quy ket thuc sau: 5
