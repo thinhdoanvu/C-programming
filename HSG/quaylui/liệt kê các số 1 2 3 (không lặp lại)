@@ -1,0 +1,47 @@
+//liet ke hoan vi cua N so, moi so dung 1 lan
+//x[1,2,3]: 123, 132, 213, 231, 312, 321
+
+#include <iostream>
+#define N 3
+
+using namespace std;
+
+int x[N]={1,2,3};//mang chua 3 gia tri 1,2,3 de tao hoan vi
+int res[N];//mang chua ket qua chuoi bit tim duoc
+int CLOSE[N];//mang danh dau so nao da su dung
+
+void inmang(int m[], int size){
+    for(int i=0; i<size; i++){
+        cout<<m[i]<<" ";
+    }
+    cout<<endl;
+}
+
+void init(int m[], int size, int value ){
+    for(int i=0; i<size; i++){
+        m[i]=value;
+    }
+}
+
+void thu(int idx){
+    if(idx==N){
+        inmang(res,N);
+        return;//phai co nha
+    }
+    //tim cac nghiem thanh phan
+    for(int i=0; i<N; i++){//duyet qua cac gia tri cua x[]
+        if(CLOSE[i]==0){//neu so chua dung
+            res[idx]=x[i];//so chua dung cap nhat cho res
+            CLOSE[i]=1;//danh dau so da dung
+            thu(idx+1);//quay lui de nhan gia tri res[]
+            CLOSE[i]=0;//reset lai trang thai chua dung
+        }
+    }
+}
+
+int main()
+{
+    init(CLOSE,N,0);//danh dau cac so chua dung
+    thu(0);
+    return 0;
+}
