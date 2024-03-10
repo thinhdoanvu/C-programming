@@ -1,0 +1,35 @@
+//liet ke day nhi phan N bit
+//N=3: 000 - 001 - 010 - ... - 111
+
+#include <iostream>
+#define N 3
+
+using namespace std;
+
+int x[2]={0,1};//mang chua 2 bit nhi phan
+int res[N];//mang chua ket qua chuoi bit tim duoc
+
+void inmang(int m[], int size){
+    for(int i=0; i<size; i++){
+        cout<<m[i]<<" ";
+    }
+    cout<<endl;
+}
+
+void thu(int idx){
+    if(idx==N){//mang res[] du 3 phan tu thi in
+        inmang(res,N);
+        return;//phai co
+    }
+    //tim cac nghiem thanh phan
+    for(int i=0; i<=1; i++){
+        res[idx]=x[i];//lay phan tu x -> res
+        thu(idx+1);//quay lui tro lai trang thai res truoc va cap nhat x moi
+    }
+}
+
+int main()
+{
+    thu(0);
+    return 0;
+}
