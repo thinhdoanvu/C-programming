@@ -3,13 +3,9 @@
     int a[100];
     int N = 100;//so luong so nguyen to can kiem tra;
     void init(int N){
-
         a[0]=0;//0: khong la SNT
-    
         a[1]=0;//1: khong la SNT
-    
         for(int i=2; i<=N; i++){
-    
             a[i]=1;
         } 
     }
@@ -18,29 +14,17 @@
 ##### Lặp lại với 3 trở đi cho đến sqrt(N)
 ##### Duyệt lại mảg a với các phần tử còn đánh dấu là 1
     void lietke(int a[], int N){
-
         for(int i=2; i<=N; i++){
-    
             if(is_snt(i)==1){
-        
                 for(int j=i*i; j<=N; j=j+i){
-            
                     a[j]=0;
-                
                 }
-            
             }
-        
         }
-    
         //in ra cac so nguyen to
-    
         for(int i=0; i<=N; i++){
-    
             if(a[i]==1){
-        
                 cout<<i<<" ";
-            
             }   
         }    
       }
