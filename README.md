@@ -14,8 +14,7 @@ void init(int N){
     
         a[i]=1;
         
-    } 
-}
+    } }
 
 ##### Duyệt từ 2 trở đi, loại bỏ các số là bội của 2: 4,6,8,...
 ##### Lặp lại với 3 trở đi cho đến sqrt(N)
