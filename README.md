@@ -15,7 +15,7 @@ void init(int N){
         a[i]=1;
         
     } 
-}
+ }
 
 ##### Duyệt từ 2 trở đi, loại bỏ các số là bội của 2: 4,6,8,...
 ##### Lặp lại với 3 trở đi cho đến sqrt(N)
@@ -47,6 +47,6 @@ void lietke(int a[], int N){
         }
         
     }    
-}
+  }
 
 ### Hãy áp dụng để in ra các số nguyên tố M - N (với M<N). ví dụ 20 - 50
