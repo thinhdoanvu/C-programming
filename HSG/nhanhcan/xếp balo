@@ -1,0 +1,112 @@
+#include <iostream>
+using namespace std;
+
+//vi du 1: w=50, v=220
+// #define n 3
+// int P=50;//trong luong toi da duoc phep mang
+// int w[n]={10,20,30};
+// int v[n]={60,100,120};
+
+//vi du 2: w=7, v=5
+// #define n 4
+// int P=8;
+// int w[n]={3, 4, 6, 5};
+// int v[n]={2, 3, 1, 4};
+
+//vi du 3:
+#define n 9
+int P=500;
+int w[n]={100,350,250, 120, 200, 50, 80, 135, 320};
+int v[n]={50, 70, 160, 200, 140, 100, 25, 120, 400};
+
+int pa=0;
+int CLOSE[n]={0};
+int x[2]={0,1};
+int res[n]={0};
+int maxvalue;
+int maxweight;
+int totalwmax=0;
+int totalvmax=0;
+//nhanh can
+int besw=0;
+int bestv=0;
+int bestsolution[n];
+
+void inmang(int m[], int size){
+    for(int i=0; i<size; i++){
+        cout<<m[i]<<" ";
+    }
+    cout<<endl;
+}
+
+void copyarr(int des[], int src[], int size){
+    for(int i=0; i<size; i++){
+        des[i]=src[i];
+    }
+}
+
+void luures(){
+    for(int i=0; i<n; i++){
+        if(CLOSE[i]!=0){
+            res[i]=w[i];            
+        }
+        else{
+            res[i]=0;
+        }
+    }
+    //inmang(res,n);
+    maxweight = 0;
+    maxvalue = 0;
+    for(int i=0; i<n; i++){
+        if(res[i]!=0){
+            maxweight += res[i];
+            maxvalue += v[i];
+        }
+    }
+    //cout<<"KL lon nhat: "<<maxweight<<", GT lon nhat: "<<maxvalue<<endl;
+}
+
+void update(){
+    if(maxweight <= P && totalvmax < maxvalue && totalwmax < maxweight){
+        totalwmax = maxweight;
+        totalvmax = maxvalue;
+        //sao chep ket qua tot nhat tu res sang bestsolution
+        copyarr(bestsolution, res, n);
+    }
+}
+
+void thu(int idx){
+    if(idx==n){
+        pa++;
+        //inmang(CLOSE,n);//mang nhi phan: 001 010 011 100 101 110 111
+        luures();//10 0 0 - 0 20 0 - 0 0 30 - 10 20 0 - 10 0 30 - 0 20 30 - 10 20 30
+        //tim tong gia tri lon nhat: maxvalue
+        update();
+        return;
+    }
+    //dieu kien xen tia
+    if(totalwmax >= P){//them dau = se bot di 1 truong hop: 7TH con 3 (n=3)
+        pa--;
+        return;
+    }
+    //tim cac nghiem thanh phan
+    for(int i=0; i<2; i++){//danh cho x
+        CLOSE[idx]=x[i];
+        thu(idx+1);
+    }
+}
+
+int main()
+{
+    thu(0);
+    cout<<"total weight: "<<totalwmax<<", total value: "<<totalvmax<<endl;
+    inmang(bestsolution,n);
+    cout<<"so pa thu sai: "<<pa;
+    return 0;
+}
+
+/*
+ví dụ 1: số pa thử sai = 3, vét cạn = 8
+ví dụ 2: số pa thử sai = 8, vét cạn = 16
+ví dụ 3: số pa thử sai = 512, vét cạn = 512
+*/
