@@ -7,17 +7,23 @@ using namespace std;
 // int w[n]={10,20,30};
 // int v[n]={60,100,120};
 
-//vi du 2: w=7, v=5
+//vi du 2: w=8, v=6
 // #define n 4
 // int P=8;
 // int w[n]={3, 4, 6, 5};
 // int v[n]={2, 3, 1, 4};
 
 //vi du 3:
-#define n 9
-int P=500;
-int w[n]={100,350,250, 120, 200, 50, 80, 135, 320};
-int v[n]={50, 70, 160, 200, 140, 100, 25, 120, 400};
+// #define n 9
+// int P=500;
+// int w[n]={100,350,250, 120, 200, 50, 80, 135, 320};
+// int v[n]={50, 70, 160, 200, 140, 100, 25, 120, 400};
+
+//vi du 4: w=16, v=32
+#define n 5
+int P=17;
+int w[n]={3, 4, 6, 2, 5};
+int v[n]={5, 2, 3, 6, 8};
 
 int pa=0;
 int CLOSE[n]={0};
@@ -28,9 +34,8 @@ int maxweight;
 int totalwmax=0;
 int totalvmax=0;
 //nhanh can
-int besw=0;
-int bestv=0;
 int bestsolution[n];
+int bestvalue=0;
 
 void inmang(int m[], int size){
     for(int i=0; i<size; i++){
@@ -67,11 +72,13 @@ void luures(){
 }
 
 void update(){
-    if(maxweight <= P && totalvmax < maxvalue && totalwmax < maxweight){
+    //cout<<"total weight: "<<totalwmax<<", total value: "<<totalvmax<<endl;
+    if(maxweight <= P && totalvmax < maxvalue){
         totalwmax = maxweight;
         totalvmax = maxvalue;
         //sao chep ket qua tot nhat tu res sang bestsolution
         copyarr(bestsolution, res, n);
+        bestvalue = totalvmax;
     }
 }
 
@@ -85,7 +92,7 @@ void thu(int idx){
         return;
     }
     //dieu kien xen tia
-    if(totalwmax >= P){//them dau = se bot di 1 truong hop: 7TH con 3 (n=3)
+    if(totalwmax > P){//them dau = se bot di 1 truong hop: 7TH con 3 (n=3)
         pa--;
         return;
     }
