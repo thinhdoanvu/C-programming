@@ -1,0 +1,66 @@
+//tim cac chuoi con phan biet tu chuoi ban dau: s=abab => a b ab ba aba bab abab
+#include <iostream>
+#include<string.h>
+#include<algorithm>
+
+using namespace std;
+
+string s = "abba";
+int leng;
+
+struct chuoi{
+    string value;//value co kieu string la chuoi con duoc tao ra tu s    
+};
+
+int dem=0;//so chuoi trong mang c
+
+struct chuoi c[100];//mang c chua 100 phan tu, moi phan tu la 1 chuoi
+
+void inchuoi(struct chuoi x[], int size){//tai sao khai bao x la struct?
+    for(int i=0; i<size; i++){
+        cout<<x[i].value<<" ";
+    }
+}
+
+void taochuoi(string x, int len){//chuoi x co chieu dai la len
+    string res = "";
+    for(int i=0; i<len; i++){
+        for(int j=0; j<len-1; j++){//len-i: loai bo cac truong hop bi thieu ky tu
+            //neu khong co len -i: voi i = 1 (ab bb ba a, a co cuoi se khong du 2 ky tu de lay)
+            res=x.substr(j,i+1);//substr(j,i+1): lay i+1 ky tu tu vi tri j
+            //cout<<res<<" ";
+            //luu vao mang c voi dem phan tu bat dau tu 0
+            c[dem++].value=res;//chu y la phai co .value
+        }
+    }
+    //in ra mang c gom cac chuoi duoc sinh ra tu s
+    cout<<"chuoi tao ra tu s: ";
+    inchuoi(c,dem);
+    cout<<endl;
+}
+
+int cmp(struct chuoi a, struct chuoi b){
+    return a.value < b.value;
+}
+
+void ketqua(){
+    //sap xep mang chuoi c
+    cout<<"mang chuoi c sau khi sap xep: ";
+    sort(c,c+dem,cmp);//ham cmp de biet sap xep tang hay giam va cho ham sort biet la du lieu kieu struct/string
+    inchuoi(c,dem);
+    //in ra cac gia tri khong trung nhau
+    cout<<endl<<"ket qua co duoc: ";
+    for(int i=0; i<dem-1; i++){
+        if(c[i].value!=c[i+1].value){
+            cout<<c[i].value<<" ";
+        }
+    }
+}
+
+int main()
+{
+    leng=s.length();
+    taochuoi(s,leng);
+    ketqua();
+    return 0;
+}
