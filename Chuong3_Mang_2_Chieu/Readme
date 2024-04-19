@@ -72,7 +72,7 @@ int B[4][4]={{1,1,1,1},{2,7,8,9},{3,8,7,1},{4,9,1,9}};
   4  9  1  9
   Là ma trận không đối xứng
 Câu 17. Viết chương trình nhân 2 ma trận sau:
-mtA[3][3]={{1,2,3},{4,5,6},{7,8,9}} * mtB[3][3]={{1,1,0},{1,1,0}}
+mtA[3][3]={{1,2,3},{4,5,6},{7,8,9}} * mtB[3][2]={{1,1,0},{1,1,0}}
 Kết quả mtC[3,2]={4,3,10},{9,16,15}}  
 Để nhân 2 ma trận cần thỏa mãn quy tắc, số HÀNG của MATRAN A = số CỘT của MATRANB. Khi đó, ma trận kết quả C có số chiều là (hàng A, cột B)
 Cách làm:
