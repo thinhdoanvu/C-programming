@@ -1,3 +1,4 @@
+//cho truoc mang x={2,3,4} thi tich={2,3,4,2*3,3*4,2*3*4}
 #include <iostream>
 #include <limits.h>
 #define MAX 100
