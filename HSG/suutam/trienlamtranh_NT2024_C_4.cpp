@@ -5,6 +5,18 @@
 //KQ: 4
 //a[]={200 100 100 200}. KQ: 2
 
+//5: 10 10 10 10 10: 
+//0 0 0 0 0: co su thay doi thi luc do moi tang dem
+
+//4: 10 10 10 20
+//3 0 0 0
+
+//truong hop: 10
+//103 101 103 103 101 102 100 100 101 104 => 100 100 101 101 101 102 103 103 103 104
+//cac doan: 100 100    101 101 101    102    103 103 103    104
+//co 3 doan khong tang: 2 3 1 3 0 0 0 0 0 0: do dai cac doan
+//=> ket qua: 10 - 3 = 7
+
 #include<iostream>
 #define MAX 100000
 using namespace std;
