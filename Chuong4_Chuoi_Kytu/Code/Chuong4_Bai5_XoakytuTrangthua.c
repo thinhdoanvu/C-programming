@@ -1,70 +1,62 @@
 #include<stdio.h>
 #include<string.h>
+#define max 100
 
-//khai bao bien
-char S[255];
-
-//chuong trinh con
-void nhapchuoi()
+char s[max]="  Dai        Hoc     Nha Trang         ";
+void Xoa()
 {
-  //khai bao bien
-  printf("Nhap vao chuoi ky tu: \n");
-  gets(S);
-  printf("\nChuoi ky tu vua nhap la: \n");
-}  
-
-//in ra chuoi vua nhap
-void inchuoi()  
-{
-  //khai bao bien
-  int i;
-  for(i=0;i<strlen(S);i++)
-  {
- 	  printf("%c",S[i]);
-		}
-}
-
-void xoatrang()
-{
-  //khai bao bien
-  int i=0;
-  int next=0;
-  char C[255];//chuoi copy
-  int dem=0;
-		
-  while(S[i]!='\0'){ //chua phai la ky tu ket thuc chuoi
-	if(S[i]==' '){//ky tu trang thu nhat
-		next=i++;
-		 while(S[next]==' ' && S[next]!='\0'){
-		 	 i=next++;//tiep tuc xet phan tu tiep theo
-		}
-	}	
-	printf("\ni=%d",i);
-	C[dem++]=S[i++];//copy ky tu thu i tu chuoi S sang chuoi C	
-	}	
-		
-	//xoa bo ky tu trang dau chuoi C neu co
-	if(C[0]!='\0' && C[0]==' '){//chua phai la ky tu ket thuc chuoi
-		//dich toan bo chuoi sang trai
-		for(i=0;i<strlen(C)-1;i++){
-		 	C[i]=C[i+1];
-		}
-		dem--;
+	int i = 0;
+	int j;
+	char C[max];
+	int dem = 0;
+	int len=strlen(s);
+	
+	//copy chuoi khong co ky tu trang o dau
+	while(s[i] == ' ')
+	{
+		i++;
 	}
-	//in ra chuoi sau khi xoa
-	printf("\nChuoi sau khi xoa tat cac cac ky tu trang lien ke nhau :\n");
-	for(i=0;i<dem;i++){
+//	printf("\ni= %d, len = %d",i,len);
+	for(int j = i; j < len; j++)
+	{
+		C[dem++] = s[j];
+	}
+	C[dem]='\0';
+	printf("\nChuoi sau khi xoa dau:%s",C);
+	
+//	//xoa ky tu trang o giua
+	len=strlen(C);
+	printf("\nlen = %d",len);
+	
+	for(i=0; i<len;){
+		printf("\ni=%d",i);
+		if(C[i] == ' ' && C[i+1] == ' ' && C[i+1]!='\0')
+		{
+			for(j=i; j<len; j++){//dich chuoi C sang trai
+				C[j]=C[j+1];
+			}
+			printf("\nChuoi sau khi xoa:%s",C);
+			len--;
+		}
+		else{
+			i++;
+		}
+	}
+	//xoa ky tu trang o cuoi trang chuoi C
+	printf("\nlen = %d",len);
+	while(C[len-1]==' ' && C[len-1]!='\0'){
+		len--;
+	}
+	printf("\nlen = %d",len);
+	printf("\nChuoi sau khi xoa la:");
+	for(i=0; i<len; i++){
 		printf("%c",C[i]);
 	}
+	
 }
-
-
-//chuong trinh chinh
 int main()
 {
-  nhapchuoi();
-  inchuoi();
-  xoatrang();
-  //ket thuc chuong trinh
-  getch();
+	printf("Chuoi da nhap la:");
+	printf("%s",s);
+	Xoa();
 }
