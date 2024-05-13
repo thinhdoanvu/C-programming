@@ -10,8 +10,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int M=700;
-int BH[]={320,100,300,560,50};
+// int M=700;
+// int BH[]={320,100,300,560,50};
+
+int M=410;
+int BH[]={400,100,20,30,210,350,80,120};
 
 int compare(int a, int b){
     return a>b;
@@ -52,7 +55,7 @@ int main()
     
     for(int j=0; j<maxdia; j++){
         for(int i=0; i<sbh; i++){
-            if(BH[i]+dldia[j]<M && flag[i]==-1){
+            if(BH[i]+dldia[j]<=M && flag[i]==-1){
                 flag[i]=j;
                 dldia[j]+=BH[i];
             }
