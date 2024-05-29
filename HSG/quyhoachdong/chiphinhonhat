@@ -1,0 +1,58 @@
+//Cho mot ma tran chi phi ve lo trinh duong di xuat phat tu (0,0) den (m,n)
+//Trong do m=so hang, n=socot
+//Moi lan chi co the di chuyen qua phai hoac xuong duoi
+//Tim duong di voi chi phi be nhat tu start -> stop
+
+#include <bits/stdc++.h>
+#define MAX 10
+
+using namespace std;
+
+// Khai báo biến
+int chiphi[MAX][MAX] = { // chi phi be nhat = 7
+    {1, 2, 1},
+    {1, 5, 2},
+    {1, 3, 1}
+};
+
+int row = 3;
+int col = 3;
+
+int res[MAX][MAX] = {0};
+
+// Ham tim min
+int min(int a, int b){
+    return (a < b) ? a : b;
+}
+
+// Hàm để in ma trận
+void inmt(int m[MAX][MAX], int row, int col) {
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            cout << m[i][j] << "   ";
+        }
+        cout << endl;
+    }
+}
+
+// Hàm đệ quy để tính chi phí nhỏ nhất
+int thu(int i, int j) {
+    if (i >= row || j >= col) { // Điều kiện vượt quá giới hạn
+        return INT_MAX;
+    }
+    if (i == row - 1 && j == col - 1) { // Điều kiện đạt đến đích
+        return chiphi[i][j];
+    }
+    if (res[i][j] != 0) { // Nếu đã tính trước đó
+        return res[i][j];
+    }
+    return res[i][j] = chiphi[i][j] + min(thu(i + 1, j), thu(i, j + 1));
+}
+
+// Chương trình chính
+int main() {
+    int result = thu(0, 0);
+    cout << "Chi phi be nhat: " << result << endl;
+    inmt(res, row, col);
+    return 0;
+}
