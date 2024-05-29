@@ -1,0 +1,61 @@
+//Mot ROBOT xuat phat tu toa do (0,0) can di den dich o vi tri (row,col)
+//Moi lan ROBOT chi co the sang phai va di xuong
+//In ra so cach di chuyen cua ROBOT
+
+#include <iostream>
+#define MAX 10
+
+using namespace std;
+
+// Khai báo biến
+// int mecung[MAX][MAX] = {//6 cach
+//     {0, 0, 0},
+//     {0, 0, 0},
+//     {0, 0, 0}
+// };
+
+int mecung[MAX][MAX] = {//2 cach
+    {0, 0, 0},
+    {0, 1, 0},
+    {0, 0, 0}
+};
+
+int row = 3;
+int col = 3;
+
+int res[MAX][MAX] = {0};
+
+// Hàm để in ma trận
+void inmt(int m[MAX][MAX], int row, int col) {
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            cout << m[i][j] << "   ";
+        }
+        cout << endl;
+    }
+}
+
+// Hàm đệ quy để tính số cách di chuyển
+int thu(int i, int j) {
+    if (i >= row || j >= col) { // Điều kiện vượt quá giới hạn
+        return 0;
+    }
+    if (mecung[i][j] == 1) { // Điều kiện gặp chướng ngại vật
+        return 0;
+    }
+    if (i == row - 1 && j == col - 1) { // Điều kiện đạt đến đích
+        return 1;
+    }
+    if (res[i][j] != 0) { // Nếu đã tính trước đó
+        return res[i][j];
+    }
+    return res[i][j] = thu(i + 1, j) + thu(i, j + 1);
+}
+
+// Chương trình chính
+int main() {
+    int result = thu(0, 0);
+    cout << "So cach di chuyen cua ROBOT: " << result << endl;
+    inmt(res,row,col);
+    return 0;
+}
