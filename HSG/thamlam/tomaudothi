@@ -1,0 +1,119 @@
+//To mau do thi:
+/*/
+7
+1 1 0 0 0 0 0
+1 1 1 0 0 1 0
+0 1 1 0 0 1 0
+0 0 0 1 1 1 0
+0 0 0 1 1 1 0
+0 1 1 1 1 1 0
+0 0 0 0 0 0 1
+*/
+#include<bits//stdc++.h>
+#define MAX 20
+using namespace std;
+
+int mtk[MAX][MAX];
+int n;//so dinh cua do thi
+int bac[MAX];
+int dinh[MAX];
+int flag[MAX];
+
+void nhap(){
+    cin>>n;
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            cin>>mtk[i][j];
+        }
+    }
+}
+
+void inmtk(){
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            cout<<mtk[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+void inmang(int m[], int size){
+    for(int i=0; i<size; i++){
+        cout<<m[i]<<" ";
+    }
+    cout<<endl;
+}
+
+void bacdothi(){
+    for(int i=0; i<n; i++){
+        int dem=0;
+        for(int j=0; j<n; j++){
+            if(mtk[i][j]==1){
+                dem++;
+            }
+        }
+        // cout<<dem<<endl;
+        bac[i]=dem;
+    }
+}
+
+int timmax(){
+    int ln=bac[0];
+    int pos=0;
+    for(int i=1; i<n; i++){
+        if(ln < bac[i] && flag[i]==-1){
+            ln=bac[i];
+            pos=i;
+        }
+    }
+    return pos;
+}
+
+int is_finish(){
+    for(int i=0; i<n; i++){
+        if(flag[i]==-1){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+void tomau(){
+    int color=0;
+    for(int i=0; i<n;i++){
+        if(is_finish()==1){
+            break;
+        }
+        //gan dinh co bac lon nhat va chua to = color
+        int dinhtam=timmax();
+        // cout<<"dinh max = "<<dinhtam<<endl;
+        flag[dinhtam]=color;
+        //to mau cho cac dinh khong ke voi dinh dang xet 
+        for(int j=0; j<n; j++){
+            if(mtk[dinhtam][j]==0 && flag[j]==-1){
+                flag[j]=color;
+            }
+        }
+        // cout<<"mau to: "<<endl;
+        color++;
+    }
+}
+
+int main(){
+    nhap();
+    // cout<<endl<<"ma tran ke:"<<endl;
+    // inmtk();
+    for(int i=0;i<n; i++){
+        dinh[i]=i;
+        flag[i]=-1;//chua to
+    }
+    // cout<<"dinh[]:"<<endl;
+    //inmang(flag,n);
+    // cout<<"bac do thi: "<<endl;
+    bacdothi();
+    inmang(bac,n);
+    //sort();
+    tomau();
+    inmang(flag,n);
+  return 0;
+}
