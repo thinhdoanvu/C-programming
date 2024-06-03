@@ -1,49 +1,81 @@
 //Cho truoc day so nguyen, hay tim day con sao cho tong cua cac phan tu cua no la mot so le lon nhat
 //a[] = {1,2,3,4,5,6,7}, S=27
 //a[] = {-1 -2 -3}, S = -1
+// 5
+// 1 2 4 3 0 1
+
+// 3 
+// 1 2 3
+
+// 5
+// 2 2 2 2 2 2
+
+// 5
+// 3 2 2 3 2 
+
+// 5 
+// 2 -1 3 4 -2
+
+// 3
+// -1 -2 -3
+
+// 4 
+// -1 -2 -3 4
+
+//cho a[]={2,3,4,1} --> tong le lon nhat = 9
 #include <bits/stdc++.h>
-#define MAX 1000
 using namespace std;
 
-int maximum(int a, int b)
-{
-	return a>b ? a:b;
+int maximum(int a, int b){
+    return (a>b)?a:b;
 }
 
 int main()
 {
-	int n;
-	cin >> n;
-	int arr[n];
-	//nhap cac phan tu cho mang
-	for(int i=0; i<n; i++){
-	    cin >> arr[i];
-	}
-	
-	int min = INT_MAX,max = INT_MIN,sum = 0;
-	
-	for(int i = 0; i<n; i++)
-	{
-		if(arr[i] > 0)
-		{
-			sum += arr[i];
-			if(arr[i]%2 == 1 && arr[i] < min)
-			{
-				min = arr[i];
-			}
-		}
-		else if(arr[i] < 0)
-		{
-			if(abs(arr[i])%2 == 1 && arr[i] > max)
-			{
-				max = arr[i];
-			}
-		}
-	}
-	//kiem tra sum co la so le
-	if(sum%2 == 0)
-	{
-		sum = maximum(sum-min,sum+max);
-	}
-	cout << sum << endl;
+    int n;
+    //nhap so phan tu
+    cin>>n;
+    //nhap cac phan tu cho mang
+    int a[n];
+    for(int i=0; i<n; i++){
+        cin>>a[i];
+    }
+    //tim tong so le lon nhat cua day con a
+    //tinh tong het day so: neu tong la chan thi tru so le be nhat
+    //tong duoc tao thanh bang cach xoa di 1 so luong phan tu bat ky (khong lam thay doi thu tu cua day)
+    
+    //neu tong la le: thi giu nguyen
+    //neu tong thu duoc la 1 so chan (khong co so am trong day): tong - so le be nhat
+    
+    //neu tong thu duoc la 1 so chan (co so am trong day): tong + so am co gia tri lon nhat
+    
+    int sum=0;
+    int MIN = INT_MAX;
+    int MAX = INT_MIN;
+    
+    for(int i=0; i<n; i++){
+        if(a[i]>0){
+            sum+=a[i];
+            if(MIN > a[i] && a[i]%2==1){
+                MIN=a[i];
+            }
+        }
+        else if(a[i]<0){
+            if(abs(a[i])%2==1 && MAX < a[i]){
+                MAX = a[i];
+            }    
+        }
+        
+    }
+    //kiem tra tong
+    cout<<"sum = "<<sum<<endl;
+    if(sum%2!=0){
+        cout<<sum;
+    }
+    else{
+        sum=maximum(sum-MIN, sum+MAX);
+        cout<<sum;
+    }
+
+    return 0;
 }
