@@ -1,0 +1,85 @@
+#include<iostream>
+#define MAX 100
+#define INPUT "bai8.inp"
+using namespace std;
+
+int a[MAX];
+int n;
+FILE*fp;
+
+void docfile(){
+	fp=fopen(INPUT, "r");
+	if(fp==NULL){
+		cout<<"ko thay file";
+	}
+	else{
+		fscanf(fp,"%d",&n);
+		cout<<n<<endl;
+		for(int i=0; i<n; i++){
+			fscanf(fp,"%d",&a[i]);
+		}	
+	}
+	fclose(fp);
+}
+void inmang(int b[], int size){
+	for(int i=0; i<size; i++){
+		cout<<b[i]<<"  ";
+	}
+	cout<<endl;
+}
+
+int sln(){
+	
+	int sln=INT_MIN;
+	for(int i=0; i<n; i++){
+		if(sln<a[i] && a[i]%2!=0 && a[i]<0){
+			sln=a[i];
+		}
+	}
+	return sln;
+}
+int slenn(){
+	
+	int snn=INT_MAX;
+	for(int i=0; i<n; i++){
+		if(snn>a[i] && a[i]%2!=0 && a[i]>0){
+			snn=a[i];
+		}
+	}
+	return snn;
+}
+
+int maximum(int a, int b){
+	return (a>b)?a:b;
+}
+
+void maxtongle(){
+	int dem=0;
+	int min=slenn();
+	int sum=0;
+	for(int i=0; i<n; i++){
+		if(a[i]>0){
+			sum=sum+a[i];
+		}
+		else{
+			if(a[i]<0){
+				dem=dem+1;
+			}
+		} 
+		
+	}
+	if(dem==n){
+		sum=sln();
+	} 
+	if(sum%2==0){
+		sum=maximum(sum-slenn(), sum+sln());
+	}
+	cout<<sum;
+}
+int main(){
+	docfile();
+	inmang(a,n);
+	maxtongle();
+	
+	return 0;
+}
