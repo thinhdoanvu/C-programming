@@ -1,0 +1,95 @@
+//cho M (tu so), N (mau so): 0<M<N
+//Hay phan tich phan so M/N thanh tong cac phan so 1/X sao cho so luong toan hang la it nhat
+/*
+Cach lam: Tim K la uoc so lon nhat cua N thoa dieu kien: K<M. 
+Tach phan so: M/N thanh 2 phan so (luon luon): K/N va M-K / N.
+De y rang: phan so dau tien: K/N luon luon co dang la phan so 1/X 
+Do vay: phan so thu 2 bay gio tro thanh phan so M/N.
+
+Lap lai toan bo thao tac: tim K tro di cho den khi M==1.
+*/
+
+//3/5 = 1/2 + 1/10
+//4/5 = 1/2 + 1/5 + 1/10
+//8/12 = 1/2 + 1/6
+//1/5 = 1/5
+
+#include<bits/stdc++.h>
+#define MAX 100
+using namespace std;
+
+int M,N,K;
+
+struct phanso{
+  int ts;
+  int ms;
+};
+
+struct phanso ps[MAX];
+int dem;
+
+int timK(){
+    for(K=N-1; K>1; K--){
+        if(N%K==0 && K<M){
+            return K;
+        }
+    }
+    return K;
+}
+
+void inps(){
+    for(int i=0; i<dem; i++){
+        if(ps[i].ts == 1){//bo qua phan so trung gian
+            cout<<ps[i].ts<<"/"<<ps[i].ms<<" ";
+        }
+    }
+}
+
+void toigian(){
+    //tim UCLN
+    int a=M, b=N;
+    
+    while(a!=b){
+        a = (a>b)?a-b:a;
+        b = (b>a)?b-a:b;
+    }
+    M=M/a;
+    N=N/a;
+}
+
+int main(){
+    cin>>M;
+    cin>>N;
+    
+    //loai tru truong hop phan so da cho la phan so thoa yeu cau
+    if(M==1){
+        cout<<M<<"/"<<N;
+        return 0;
+    }
+    
+    //toi gian phan so M/N, tranh TH 8/12 = 1/2 + 1/8 + 1/24 khong toi uu
+    toigian();
+    
+    //Tranh truong hop nhu 4/5 = 1/5 + 1/5 + 1/5 + 1/5. Ta nhan M va N cho 2.
+    //thuc te co the nhan 3,4,5 ...
+    M=M*2;
+    N=N*2;
+    
+    while(M>1){//khi M chua la 1/X
+        timK();
+        //phan so thu 1: K/N luon co dang 1/X = K/K / N/K
+        //cout<<K/K<<"/"<<N/K<<endl;
+        
+        //tranh hien thi ket qua trung gian -> luu vao mang
+        ps[dem].ts = K/K;
+        ps[dem++].ms = N/K;
+        
+        //phan so thu 2 -> phan so M/N
+        M=M-K;
+        //cout<<M<<"/"<<N<<endl;
+        ps[dem].ts = M;
+        ps[dem++].ms = N;
+    }
+    inps();
+    
+}
