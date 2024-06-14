@@ -1,0 +1,109 @@
+#include<bits/stdc++.h>
+#define MAX 100
+#define input "tromdao.inp"
+using namespace std;
+
+//khai bao bien
+int n,start,stop;
+int dao[MAX][2];
+FILE *fp;
+int flag[MAX];
+
+void readfile(){
+    fp=fopen(input,"r");
+    if(fp==NULL){
+        cout<<"File not found";
+        return;
+    }
+    fscanf(fp,"%d",&n);
+    fscanf(fp,"%d",&start);
+    fscanf(fp,"%d",&stop);
+    
+    for(int i=0; i<n; i++){
+        for(int j=0; j<2; j++){
+            fscanf(fp,"%d",&dao[i][j]);   
+        }
+    }
+    fclose(fp);
+}
+
+
+void inmt(){
+    for(int i=0; i<n; i++){
+        for(int j=0; j<2; j++){
+            cout<<dao[i][j]<<"  ";
+        }
+        cout<<endl;
+    }
+}
+
+void sort_cot0(){//sap theo tang dan theo cot 1
+    for(int i=0; i<n-1; i++){
+        for(int k=i+1; k<n; k++){   
+            if(dao[i][0] > dao[k][0]){
+                for(int j=0; j<2; j++){
+                    int tam=dao[i][j];
+                    dao[i][j]=dao[k][j];
+                    dao[k][j]=tam;
+                }
+            }
+        }
+    }
+    cout<<"sap xep tang dan theo cot 0"<<endl;
+    inmt();
+}
+
+void sort_cot1(){//neu cung gia tri o cot 1 thi giam dan cho cot 2
+    for(int i=0; i<n-1; i++){
+        for(int k=i+1; k<n; k++){   
+            if(dao[i][0] == dao[k][0] && dao[i][1] < dao[k][1]){
+                for(int j=0; j<2; j++){
+                    int tam=dao[i][j];
+                    dao[i][j]=dao[k][j];
+                    dao[k][j]=tam;
+                }
+            }
+        }
+    }
+    cout<<"sap xep tang dan theo cot 1"<<endl;
+    inmt();
+}
+
+
+void inmang(){
+    for(int i=0; i<n; i++){
+        cout<<flag[i]<<" ";
+    }
+}
+
+void thu(){
+    //mang danh dau dong da duyet/chua duyet
+    for(int i=0; i<n; i++){
+        flag[i]=-1;
+    }
+    //TNK hai moi qua dao mat 1 don vi thoi gian, bat dau tao thoi diem start va ket thuc luc stop -1
+    int dem=1;//tong thoi gian hai dao
+    int tonggt=dao[0][1];//gia tri cua dao
+    int conlai = stop - dao[0][0];
+    flag[0]=0;//chon day dao dau tien da sap xep de hai
+    dem=dem+dao[0][0];
+    
+    for(int i=1; i<n; i++){
+        cout<<"dem: "<<dem<<", con lai: "<<conlai<<endl;
+        if(dem<=conlai && dao[0][i] < dem){
+            tonggt+=dao[i][1];
+            dem+=dao[0][i];
+            conlai-=dem;
+            flag[i]=i;
+        }
+    }
+    inmang();
+}
+
+int main(){
+    readfile();
+    inmt();
+    sort_cot0();
+    sort_cot1();
+    thu();
+}
