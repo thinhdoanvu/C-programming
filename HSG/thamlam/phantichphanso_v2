@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int m;
+int n;
+int k;
+
+int timk(){
+	for(k=n-1; k>1; k--){
+		if(n%k==0 && k<m){
+			return k;
+		}
+	}
+}
+
+int main(){
+	cin>>m;
+	cout<<"-"<<endl;
+	cin>>n;
+	cout<<"ps da cho"<<m<<"/"<<n<<endl;
+	if(m==1){
+		cout<<m<<"/"<<n<<endl;
+		return 0;
+	}
+		m=m*2;
+		n=n*2;
+		while(m>1){
+			timk();
+			cout<<k/k<<"/"<<n/k<<endl;
+			m=m-k;
+			if(n%m==0){
+			  int tam=m;
+			  m=m/tam;
+			  n=n/tam;
+			}
+			if(m==1){
+			  cout<<m<<"/"<<n<<endl;
+			}
+		}
+		
+	return 0;
+}
