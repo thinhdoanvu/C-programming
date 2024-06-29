@@ -1,0 +1,39 @@
+#include <iostream>
+#define MAX 100
+using namespace std;
+
+int p = 12;
+int a[] = {1, 3, 2, 6, 5, 7};
+int n;
+int res[MAX];
+int s = 0;
+
+void in(int idx) {
+    for (int i = 0; i < idx; i++) {
+        cout << res[i] << " ";
+    }
+    cout << endl;
+}
+
+void thu(int idx, int start) {
+    if (s == p) {
+        in(idx);
+        return;
+    }
+
+    for (int i = start; i < n; i++) {
+        if (s + a[i] <= p) {
+            res[idx] = a[i];
+            s += a[i];
+            thu(idx + 1, i + 1);
+            s -= a[i];
+        }
+    }
+}
+
+int main() {
+    n = sizeof(a) / sizeof(a[0]);
+    cout << "n = " << n << endl;
+    thu(0, 0);
+    return 0;
+}
