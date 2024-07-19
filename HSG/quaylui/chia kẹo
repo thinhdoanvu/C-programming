@@ -1,0 +1,150 @@
+/******************************************************************************
+Cho day so: 3 2 5 9 4. 
+Hay in ra cac 2 phan sao cho do lech cua 2 phan la be nhat
+(3,9) (2,5,4)
+- Ky thuat tham lam
+- Ky thuat nhanh can/quay lui
+- Ky thuat quy hoach dong
+*******************************************************************************/
+#include <bits/stdc++.h>
+#define MAX 100
+
+using namespace std;
+
+int a[]={3, 2, 5, 9, 4};
+int M = 2;
+int n;
+int P=0;
+int flag[MAX];//mang danh dau danh cho nhanh can
+int res[MAX];//mang chua cac phan tu cua nhanh can
+int bestres[MAX];//mang chua cac phan tu cua nhanh can
+int best=0;//so phan tu cua mang rest
+
+/******************************************************************************
+ * Ham ho tro: khoitao, in mang
+ ******************************************************************************/
+int comp(int a, int b){
+    return a>b;
+}
+
+void khoitao(int m[], int size, int value){
+    for(int i=0; i<size; i++){
+        m[i]=value;
+    }
+}
+
+void inmang(int m[], int size){
+    for(int i=0; i<size; i++){
+        cout<<m[i]<<" ";
+    }
+    cout<<endl;
+}
+
+/******************************************************************************
+ * Ky thuat tham lam
+ ******************************************************************************/
+void thamlam(){
+    khoitao(flag,n,0);
+    int mang0[MAX];
+    int mang1[MAX];
+    int dem0=0;
+    int dem1=0;
+    int tong0=0;
+    int tong1=0;
+    
+    //sap xep mang theo thu tu giam dan
+    sort(a,a+n,comp);
+    //in lai mang a sau khi sap xep
+    inmang(a,n);
+    
+    //gan 2 so lon nhat vao 2 mang
+    mang0[dem0++]=a[0]; tong0=a[0];
+    mang1[dem1++]=a[1]; tong1=a[1];
+    //duyet qua tung phan tu, neu tong nao dang be hon thi uu tien xep bo them vao
+    for(int i=2; i<n; i++){
+        if(tong0 < tong1){//so keo o phan 1 < so keo o phan 2
+            tong0+=a[i];
+            mang0[dem0++]=a[i];
+        }
+        else{
+            tong1+=a[i];
+            mang1[dem1++]=a[i];
+        }
+    }
+    //in ra 2 mang sau khi hoan thanh
+    cout<<"phan keo thu 1: ";
+    inmang(mang0,dem0);
+    cout<<"phan keo thu 2: ";
+    inmang(mang1,dem1);
+}
+
+/******************************************************************************
+ * Ky thuat nhanh can: thuc ra bai nay chi can quay lui la duoc
+ * Nghia la: KHONG can update, dieu kien xen tia
+ * Voi ky thuat nay = tim cac so co tong bang P cho truoc
+ ******************************************************************************/
+void update(int idx){
+    for(int i=0; i<idx; i++){
+        bestres[i]=res[i];
+    }
+}
+void nhanhcan(int idx, int sum){
+    if(sum==P){
+        //inmang(res,idx);
+        update(idx);
+        return;
+    }
+    //dieu kien xen tia
+    if(sum>P){
+        return;
+    }
+    //xet cac nghiem con va quay lui
+    for(int i=0; i<n; i++){
+        if(flag[i]==0 && sum+a[i]<=P){
+            sum+=a[i];
+            res[idx]=a[i];
+            flag[i]=1;
+            best++;
+            nhanhcan(idx+1, sum);
+        }
+    }
+}
+
+/******************************************************************************
+ * Ky thuat quy hoach dong
+ * 
+ ******************************************************************************/
+
+ /******************************************************************************
+ * Chuong trinh chinh
+ ******************************************************************************/
+int main()
+{
+    n=sizeof(a)/sizeof(a[0]);
+    cout<<"spt = "<<n<<endl;
+    //tinh tong cua cac phan tu trong mang a -> chia cho so nhom (M=2) -> gan cho P
+    for(int i=0; i<n; i++){
+        P+=a[i];    
+    }
+    P=P/M;
+    cout<<"so keo can chia cho 1 nhom bat ky: "<<P<<endl;
+    
+    //ky thuat tham lam:
+    cout<<"Ky thuat tham lam: ";
+    thamlam();
+    
+    //ky thuat nhanh can:
+    cout<<"Ky thuat nhanh can: "<<endl;
+    //khoi tao flag
+    khoitao(flag,n,0);
+    nhanhcan(0,0);
+    cout<<"Phan keo thu 1: ";
+    inmang(bestres,best);
+    cout<<"Phan keo thu 2: ";
+    for(int i=0; i<n; i++){
+        if(flag[i]==0){
+            cout<<a[i]<<" ";
+        }
+    }
+    return 0;
+}
