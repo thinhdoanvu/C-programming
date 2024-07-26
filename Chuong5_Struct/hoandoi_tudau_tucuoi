@@ -1,0 +1,58 @@
+#include<stdio.h>
+#include<string.h>
+#define MAX 255
+
+char s[MAX] = "Toi yeu em den nay chung co the, Puskin";
+
+struct chuoi{
+	char value[MAX];
+};
+
+struct chuoi ch[200];
+
+void inchuoi(char c[MAX]){
+	for(int i=0; i<strlen(c); i++){
+		printf("%c",c[i]);
+	}
+}
+
+void tachtu(){
+	char tam[MAX]="";
+	int dem=0;
+	int count=0;
+	for(int i=0; i<=strlen(s); i++){
+		if(s[i]!=' ' && s[i]!='\0'){
+			tam[dem++]=s[i];
+		}else{
+			tam[dem]='\0';
+			printf("tam = ");
+			puts(tam);
+			//copy chuoi tam vao ch[i]
+			strcpy(ch[count++].value,tam);
+			dem=0;	
+		}
+	}	
+	//in ra mang ch
+	printf("\nCac phan tu cua mang ch: ");
+	for(int i=0; i<count; i++){
+		inchuoi(ch[i].value);
+		printf(" ");
+	}
+	//hoan doi tu dau va tu cuoi cua mang ch
+	strcpy(tam,ch[0].value);
+	strcpy(ch[0].value,ch[count-1].value);
+	strcpy(ch[count-1].value,tam);
+	//in lai mang ch
+	printf("\nHoan doi tu dau va tu cuoi: ");
+	for(int i=0; i<count; i++){
+		inchuoi(ch[i].value);
+		printf(" ");
+	}
+}
+
+int main(){
+	printf("Chuoi da cho: ");
+	inchuoi(s);
+	printf("\n");
+	tachtu();
+}
