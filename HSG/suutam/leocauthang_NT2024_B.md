@@ -1,9 +1,11 @@
-//Xem lai bai toan quay lui se thay khi n>10 se bung no to hop
-//khong the giai duoc trong huu han thoi gian va huu han vung nho
-//nhan xet: de buoc so buoc co n = 10
-//phuong an n=10: con lai (1/2 buoc) + n=9
-//phuong an n=9: con lai (1/2 buoc) + n=8
-//... phuong an n=1: 1 buoc, n=2 hoac =1 hoac bang 2
+Xem lai bai toan quay lui se thay khi n>10 se bung no to hop  
+khong the giai duoc trong huu han thoi gian va huu han vung nho  
+nhan xet: de buoc so buoc co n = 10  
+phuong an n=10: con lai (1/2 buoc) + n=9  
+phuong an n=9: con lai (1/2 buoc) + n=8  
+//... phuong an n=1: 1 buoc, n=2 hoac =1 hoac bang 2  
+
+```
 #include<bits/stdc++.h>
 using namespace std;
 vector <long long> f;
@@ -42,6 +44,8 @@ int main(){
     
     return 0;
 }
-
-//9 - 34; 6 - 13; 14 - 610; 3 - 3; 12 - 233; 8 - 21
-//5 - 8; 18 - 2584; 7- 13; 11- 144
+```
+```
+9 - 34; 6 - 13; 14 - 610; 3 - 3; 12 - 233; 8 - 21
+5 - 8; 18 - 2584; 7- 13; 11- 144
+```
