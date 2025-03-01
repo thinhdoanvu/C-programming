@@ -1,7 +1,5 @@
 The series \( S \) is given by:
-\[
-S = 1 + \frac{1}{1+2} + \frac{1}{1+2+3} + \dots + \frac{1}{1+2+3+\dots+n}
-\]
+S = 1 + 1/(1+2) + 1/(1+2+3) + ... + 1/(1+2+3+...+n)
 ```
 #include<bits/stdc++.h>
 using namespace std;
