@@ -1,6 +1,6 @@
 Nhập chuỗi S= ‘AABBBDFFFFGH’ (Từ 3 kí tự trở lên mới nén)
 Nén: AA3BD4FGH
-
+```
 #include<iostream>
 #include<string.h>
 using namespace std;
@@ -41,3 +41,4 @@ int main(){
 	nen();
 	return 0;
 }
+```
