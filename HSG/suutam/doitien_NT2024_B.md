@@ -1,6 +1,11 @@
-//Cho truoc menh gia: 5 10 20
-//Cho truoc so tien: 20
-//Dem so cach doi: 5*4, 10*2, 20, 5*2+10
+Cho truoc menh gia: 5 10 20  
+Cho truoc so tien: 20  
+Dem so cach doi: 4
+5 5 5 5
+10 10
+20
+5 5 10  
+```
 #include<bits/stdc++.h>
 #include<vector>
 using namespace std;
@@ -28,3 +33,4 @@ int main(){
     cin>>sotien;
     cout<<thu(sotien)<<endl;
 }
+```
