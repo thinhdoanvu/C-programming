@@ -1,9 +1,9 @@
-//Nhập vào một chuỗi S bao gồm cả kí tự số và chữ. Đếm xem trong chuỗi S có bao nhiêu số chia hết cho 5 và in các số đó ra. 
-//VD: Nhập S= ‘asg35gds67gdgf345hh’ 
-//Có 2 số chia hết cho 5 là: 35, 345
-//version 2
-//Doan Vu Thinh, NTU, 31/03/2024
-
+Nhập vào một chuỗi S bao gồm cả kí tự số và chữ. Đếm xem trong chuỗi S có bao nhiêu số chia hết cho 5 và in các số đó ra. 
+VD: Nhập S= ‘asg35gds67gdgf345hh’ 
+Có 2 số chia hết cho 5 là: 35, 345  
+version 2  
+Doan Vu Thinh, NTU, 31/03/2024  
+```
 #include<iostream>
 #include<string.h>
 #include<algorithm>
@@ -73,3 +73,4 @@ int main(){
 	inmangchuoi(c,dem);
 	return 0;
 }
+```
