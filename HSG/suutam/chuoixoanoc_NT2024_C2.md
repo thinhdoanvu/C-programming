@@ -1,12 +1,10 @@
-//cho chuoi so xoan oc tu tam ra ngoai theo chieu nguoc kim dong ho
-/*
-    5 4 3
-    6 1 2
-    7 8 9
-*/
-//tiep theo cho cac so, nhap toa do (x,y) va cho biet so tai do la bao nhieu:
-//(-1,1)=9, (1,2)=13
-
+Cho chuỗi số xoắn ốc từ tâm ra ngoài theo chiều ngược kim đồng hồ  
+5 4 3  
+6 1 2  
+7 8 9  
+Tiếp theo cho các số, nhập tọa độ (x,y) và cho biết số tại đó là bao nhiêu:  
+Ví dụ: (-1,1)=9, (1,2)=13  
+```
 #include<bits/stdc++.h>
 int s,x,y;
 
@@ -72,3 +70,4 @@ int main(){
     cout<<thu(x,y);
     return 0;
 }
+```
