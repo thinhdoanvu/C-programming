@@ -1,8 +1,10 @@
-//Cho truoc ngay thang nam hop le, in ra ngay /thang/ nam ke tiep:
-//30 4 2024 -> 1/5/2024
-//29 2 2024 -> 1/3/2024
-//31 12 2024 -> 1/1/2025
-//30 10 2024 -> 1/11/2024
+Cho trước ngày tháng năm hợp lệ, in ra ngày/tháng/năm kế tiếp:  
+Ví dụ:  
+30 4 2024 -> 1/5/2024  
+29 2 2024 -> 1/3/2024  
+31 12 2024 -> 1/1/2025  
+30 10 2024 -> 1/11/2024  
+```
 #include<iostream>
 using namespace std;
 
@@ -73,3 +75,4 @@ int main(){
 	cout<<d<<"/"<<m<<"/"<<y;
 	return 0;
 }
+```
