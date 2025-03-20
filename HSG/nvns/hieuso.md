@@ -1,4 +1,4 @@
-Hãy in ra màn hình hiệu số lớn nhất của dãy số a, trong đó:
+Hãy in ra màn hình hiệu số lớn nhất của dãy số a, trong đó:  
 i<=j, 
 ai <<= aj
 Ví dụ:
