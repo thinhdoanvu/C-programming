@@ -1,7 +1,7 @@
-//Cho truoc n to tien co menh gia khac nhau:
-//In ra tong so tien co the co tu n to tien tren
-//n=4, 4 2 5 2 => 2 4 5 6 7 8 9 11 13
-
+Cho truoc n to tien co menh gia khac nhau:  
+In ra tong so tien co the co tu n to tien tren  
+n=4, 4 2 5 2 => 2 4 5 6 7 8 9 11 13  
+```
 #include <bits/stdc++.h>
 #include <limits.h>
 #define MAX 100
@@ -69,3 +69,4 @@ int main()
     
     return 0;
 }
+```
