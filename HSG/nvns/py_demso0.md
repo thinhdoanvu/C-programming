@@ -1,7 +1,7 @@
-Đếm số 0 tận cùng bên phải của n!
-5! = 1
-10! = 1
-12! = 2
+Đếm số 0 tận cùng bên phải của n!  
+5! = 1  
+10! = 1  
+12! = 2  
 ```
 global ds_gt
 
