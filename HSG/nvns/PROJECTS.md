@@ -1,4 +1,3 @@
-'''
 n: số lượng dự án  
 ai, pi, pi: ngày bắt đầu, ngày kết thúc, phần thưởng  
 output: số phần thưởng tối đa kiếm được  
