@@ -9,14 +9,14 @@ output-1:
 
 input-2: 
 3
-1 2 3 
-output-2:  
+1 2 3  
+output-2:   
 4  
 
 input-3: 
 9  
-1 2 1 3 2 2 2 2 3 
-output-3: 
+1 2 1 3 2 2 2 2 3  
+output-3:  
 10 
  
 Số nhỏ nhất của a[i] = 1  
