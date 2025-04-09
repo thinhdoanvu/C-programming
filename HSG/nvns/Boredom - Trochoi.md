@@ -1,12 +1,12 @@
-Cho dãy số a0-an, Chọn 1 số ak và xóa tất cả các số liền trước (ak-1) và liền sau (ak+1).
-Mỗi 1 lần chọn 1 số ta được ak điểm.
-Hãy chọn cho đến khi ko còn số nào để xóa, sao cho tổng các lần chọn là lớn nhất.
-input-1:        input-2:    input-3: 
-2               3           9    
-1 2             1 2 3       1 2 1 3 2 2 2 2 3
-output-1:       output-2:   output-3:
-2               4           10
-Số nhỏ nhất của a[i] = 1
+Cho dãy số a0-an, Chọn 1 số ak và xóa tất cả các số liền trước (ak-1) và liền sau (ak+1).  
+Mỗi 1 lần chọn 1 số ta được ak điểm.  
+Hãy chọn cho đến khi ko còn số nào để xóa, sao cho tổng các lần chọn là lớn nhất.  
+input-1:        input-2:    input-3:   
+2               3           9      
+1 2             1 2 3       1 2 1 3 2 2 2 2 3  
+output-1:       output-2:   output-3:  
+2               4           10  
+Số nhỏ nhất của a[i] = 1  
 ```
 n = int(input())
 a = list(map(int, input().split()))
