@@ -6,33 +6,70 @@ Gợi ý: phân tích thành tích các thừa số nguyên tố:a^i * b^j * c^k
 Số ước = (i+1)(j+1)(k+1)  
 Ví dụ: 24 = 2^2 * 3 => số ước = (2+1)(1+1) = 6  
 ```
-global ds, n, p, k
+import math
+list_prime = []
 
-# khoi tao ds va n
-ds = ""
+def sangnguyento(x):
+    list_prime = [0]*(x+1)
+    
+    for i in range(2, int(math.sqrt(x)) + 1):
+        if list_prime[i] == 0:  # i is a prime number
+            for j in range(i*i, x+1, i):  # Mark all multiples of i as non-prime
+                list_prime[j] = 1  # Mark non-prime
+    # print(list_prime)
+    
+    # in ra day so nguyen to
+    list_snt=[]
+    for i in range(2, x, 1):
+        if list_prime[i]==0:
+            list_snt.append(i)
+             
+    return list_snt
 
+# phan tich 1 so thanh cac thua so nguyen to 
+def timuoc(x):
+    ds_uoc=[]
+    while x>1:
+        for i in sangnt:
+            if x%i==0:
+                # print(i, end="*")
+                ds_uoc.append(i)
+                x=x//i
+    # print(ds_uoc)
+    # dem so uoc = tich(so lan lap lai +1) 
+    # 100 = 2 2 5 5 = (2+1)*(2+1) = 9
+    # 24 = 2 2 2 3 = (3+1)*(1+1) = 8 
+    # dung phep dem phan phoi de tinh so lan lap lai cua moi boi snt 
+    tam = max(ds_uoc)
+    dem = [0]*(tam+1)
+    for i in ds_uoc:
+        dem[i] +=1
+    
+    # print(dem)
+    # tinh tong uoc
+    count=1
+    for i in range(len(dem)):
+        if dem[i]!=0:
+            count*=(dem[i]+1)
+    print(count)
+    
 if __name__ == "__main__":
-    k, p = map(int, input().strip().split())
-    n=2*(p+k)
+    # Nhap du lieu
+    n = int(input())
+    list_number = []
     
-    # tạo ra n số từ 1 trở đi
-    for i in range(1, n + 1):
-        ds = ds+str(i)  # Gán lại ds sau khi cộng chuỗi mới
+    for i in range(n):
+        list_number.append(int(input()))
+    # print(list_number)
     
-    # print(ds)
+    # in ra bang 1 + so nguyen to toi da (MAX cua so vua nhap) 
+    MAX = max(list_number) 
+    # print(MAX) 
     
-    # so chu so can xoa
-    count = 0
-    i = 0 
-    while i<len(ds)-1:
-        if ds[i] < ds[i+1] and count <k:
-            ds = ds.replace(ds[i],'')
-            count += 1
-            i=0 # reset i
-        else:
-            i=i+1    
-        # print(ds)
-    # in ra chu so thu p cua so lon nhat co duoc
+    sangnt = sangnguyento(MAX)
+    # print(sangnt)
     
-    print(int(ds[p-1]))
+    # phan tich thua so nguyen to = cac uoc cua 1 so 
+    for i in range(n):
+        timuoc(list_number[i])
     ```
