@@ -22,3 +22,22 @@ input-3:
 1 1  
 output-3:  
 1
+
+```
+def solve(n, m):
+    total_steps = n * m
+    if total_steps == 0:
+        return 1
+    if total_steps == 1:
+        return 1
+    f = [0] * (total_steps + 1)
+    f[0] = 1
+    f[1] = 1
+    for i in range(2, total_steps + 1):
+        f[i] = f[i - 1] + f[i - 2]
+    return f[total_steps]
+
+if __name__ == "__main__":
+    n, m = map(int, input().split())
+    print(solve(n, m))
+```
