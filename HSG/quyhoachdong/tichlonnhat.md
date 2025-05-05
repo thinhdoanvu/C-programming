@@ -22,3 +22,32 @@ Input-2:
 -2 3 4  
 Output-2:  
 12
+
+```
+n = int(input())
+s = list(map(int, input().split()))
+
+def max_product_dp(s):
+    n = len(s)
+    max_dp = [0] * n
+    min_dp = [0] * n
+    
+    max_dp[0] = s[0]
+    min_dp[0] = s[0]
+    result = s[0]
+
+    for i in range(1, n):
+        max_dp[i] = max(s[i], s[i] * max_dp[i-1], s[i] * min_dp[i-1])
+        min_dp[i] = min(s[i], s[i] * max_dp[i-1], s[i] * min_dp[i-1])
+        result = max(result, max_dp[i])
+    
+    return result
+
+print(max_product_dp(s))
+```
+
+#### 🔍 Ý tưởng chính (Quy hoạch động):  
+Tại mỗi chỉ số i, ta lưu:  
+max_dp[i]: tích lớn nhất của mảng con kết thúc tại vị trí i  
+min_dp[i]: tích nhỏ nhất của mảng con kết thúc tại vị trí i  
+Vì sao cần min_dp[i]? Vì nếu phần tử hiện tại là số âm, nhân với một tích nhỏ nhất (âm) trước đó sẽ ra số dương lớn.  
