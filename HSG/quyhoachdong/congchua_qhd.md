@@ -9,11 +9,11 @@ Ngày xửa ngày xưa có một nàng công chúa dễ thương tên là Farida
   - in ra t dòng, mỗi dòng là một đáp án cho một trường hợp thử nghiệm.  
 #### Ví dụ
 #### input 
-2
-5
-1 2 3 4 5
-1
-10
+2  
+5  
+1 2 3 4 5  
+1  
+10  
 
 #### output  
 9  
