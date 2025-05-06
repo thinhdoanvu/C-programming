@@ -18,3 +18,29 @@ Ngày xửa ngày xưa có một nàng công chúa dễ thương tên là Farida
 #### output  
 9  
 10  
+```
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    x = list(map(int, input().split()))
+    
+    if n == 0:
+        print(0)
+        continue
+    if n == 1:
+        print(x[0])
+        continue
+    '''
+    tại mỗi f[i] = f[i-1]+0: đã nhận $ từ quái vật trước đó 
+    hoặc f[i] = f[i-2]+x[i]
+    '''
+    
+    f = [0] * n
+    f[0] = x[0]
+    f[1] = max(x[0], x[1])
+
+    for i in range(2, n):
+        f[i] = max(f[i-1], f[i-2] + x[i])
+    
+    print(f[n-1])
+```
