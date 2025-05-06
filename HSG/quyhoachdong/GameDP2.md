@@ -8,13 +8,13 @@ Dòng thứ 2 chứa N số của dãy, mỗi số cách nhau 1 dấu cách.
 
 Kết quả:  
 Số điểm lớn nhất có thể đạt được.  
-```
+
 Dữ liệu nhập 1:  
 5 2  
 -2 3 -6 -4 5  
 Kết quả ví dụ 1:  
 4
-```
+
 ```
 def solve(n,k):
     if n==0 or n==1:
