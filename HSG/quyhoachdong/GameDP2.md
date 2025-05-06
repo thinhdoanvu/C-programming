@@ -15,3 +15,32 @@ Dữ liệu nhập 1:
 Kết quả ví dụ 1:  
 4
 ```
+```
+def solve(n,k):
+    if n==0 or n==1:
+        return n
+    
+    f=[0]*(n+1)
+    start=0
+    stop=start+k
+    # child = s[start:stop+1]
+    # child=s[4:5]
+    # print(child)
+    for i in range(n):
+        child = s[start:stop]
+        # print(f"start={start}, stop={stop},max = {max(child)}")
+        f[i]=f[i-1]+max(child)
+        start=s.index(max(child))+1
+        if start>=n:
+            break
+        else:
+            stop=start+k
+            
+    return max(f)
+
+if __name__=="__main__":
+    n,k = map(int, input().split())
+    s=list(map(int, input().split()))
+    # print(s)
+    print(solve(n,k))
+```
